@@ -9,11 +9,11 @@ package DomainModel;
  * @author Iara
  */
 public class Material {
-    int idMaterial;
-    String descricao;
+    private int idMaterial;
+    private String descricao = "";
     
-    public Material(int id, String desc){
-        this.idMaterial = id;
+    public Material(int codigo, String desc){
+        this.idMaterial = codigo;
         this.descricao = desc;
     }
 

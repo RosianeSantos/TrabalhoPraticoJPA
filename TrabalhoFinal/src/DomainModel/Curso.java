@@ -9,8 +9,8 @@ package DomainModel;
  * @author Iara
  */
 public class Curso {
-    int idCurso;
-    String nome;
+    private int idCurso;
+    private String nome;
     
     public Curso(int id, String nome){
         this.idCurso = id;

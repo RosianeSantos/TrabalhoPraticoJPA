@@ -141,4 +141,30 @@ public class CursoDAO {
             return null;
         }
     }
+    
+    
+    
+/*    public Curso buscarNome(String nome) {
+        try {
+            
+            String sql = "select * from curso ";
+            String where = "";
+            
+            
+            where = "nome like "+nome;
+            
+            
+            
+            Statement comando = bd.getConexao().createStatement();
+            
+            ResultSet resultado = comando.executeQuery(sql);
+            
+           
+            
+            return resultado.;
+        } catch (SQLException ex) {
+            Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }*/
 }
