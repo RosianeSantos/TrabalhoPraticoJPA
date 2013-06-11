@@ -12,16 +12,16 @@ import java.util.List;
  * @author Iara
  */
 public class Aluno {
-    int idAluno;
-    String nome;
-    String cpf;
-    String rg;
-    List<Telefone> telefone;
-    List<Email> email;
-    double media;
-    String nomeresp;
-    String telefoneresp;
-    int idcurso;
+    private int idAluno;
+    private String nome;
+    private String cpf;
+    private String rg;
+    private List<Telefone> telefone;
+    private List<Email> email;
+    private double media;
+    private String nomeresp;
+    private String telefoneresp;
+    private int idcurso;
     
     public Aluno(){
         idAluno =0;

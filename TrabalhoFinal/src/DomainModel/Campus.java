@@ -9,12 +9,12 @@ package DomainModel;
  * @author Iara
  */
 public class Campus {
-    int idCampus;
-    String nome;
-    String telefone;
-    String cidade;
-    String rua;
-    int numero; 
+    private int idCampus;
+    private String nome;
+    private String telefone;
+    private String cidade;
+    private String rua;
+    private int numero; 
     
     public Campus(int id, String nome, String tel, String cidade, String rua, int num){
         this.idCampus = id;

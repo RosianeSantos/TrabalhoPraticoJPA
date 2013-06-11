@@ -9,10 +9,10 @@ package DomainModel;
  * @author Iara
  */
 public class Quarto {
-    int idQuarto;
-    int numero;
-    boolean banheiro;
-    int codpredio;
+    private int idQuarto;
+    private int numero;
+    private boolean banheiro;
+    private int codpredio;
     
     public Quarto(int id, int num, boolean banheiro){
         this.idQuarto = id;

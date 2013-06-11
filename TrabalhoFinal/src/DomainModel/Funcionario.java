@@ -10,10 +10,10 @@ package DomainModel;
  */
 public class Funcionario {
 
-    int idFuncionario;
-    String nome;
-    String cpf;
-    String telefone;
+    private int idFuncionario;
+    private String nome;
+    private String cpf;
+    private String telefone;
     
     public Funcionario(int id, String nome, String cpf, String tel){
         this.idFuncionario = id;

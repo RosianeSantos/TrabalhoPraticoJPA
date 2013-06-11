@@ -11,11 +11,11 @@ import java.util.Date;
  * @author Iara
  */
 public class Alocacao {
-    int idaluno;
-    int idquarto;
-    Date dataEntrada;
-    Date dataSaida;
-    String semestreletivo;
+    private int idaluno;
+    private int idquarto;
+    private Date dataEntrada;
+    private Date dataSaida;
+    private String semestreletivo;
     
     public Alocacao(){
         semestreletivo = "";

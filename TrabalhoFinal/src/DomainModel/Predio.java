@@ -9,10 +9,10 @@ package DomainModel;
  * @author Iara
  */
 public class Predio {
-    int idPredio;
-    String nome;
-    int codfuncionario;
-    int codcampus;
+    private int idPredio;
+    private String nome;
+    private int codfuncionario;
+    private int codcampus;
     
     public Predio(int id, String nome){
         this.idPredio = id;

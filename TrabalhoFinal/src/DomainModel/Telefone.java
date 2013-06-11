@@ -9,8 +9,8 @@ package DomainModel;
  * @author Iara
  */
 public class Telefone {
-    String ddd;
-    String numero;
+    private String ddd;
+    private String numero;
     
     public Telefone(){
         this.ddd = "38";

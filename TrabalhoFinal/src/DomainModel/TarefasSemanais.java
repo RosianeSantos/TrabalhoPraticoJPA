@@ -9,8 +9,8 @@ package DomainModel;
  * @author Iara
  */
 public class TarefasSemanais {
-    int idTarefas;
-    String descricao;
+    private int idTarefas;
+    private String descricao;
     
     public TarefasSemanais(int id, String desc){
         this.idTarefas = id;

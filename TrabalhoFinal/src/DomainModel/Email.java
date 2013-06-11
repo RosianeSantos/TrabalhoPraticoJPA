@@ -9,7 +9,7 @@ package DomainModel;
  * @author Iara
  */
 public class Email {
-    String email;
+    private String email;
     
     public Email(){
         this.email = "teste@ol.com.br";

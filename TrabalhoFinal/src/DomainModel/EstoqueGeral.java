@@ -9,9 +9,9 @@ package DomainModel;
  * @author Iara
  */
 public class EstoqueGeral {
-    int idEstoque;
-    int qtde;
-    int idMaterial;
+    private int idEstoque;
+    private int qtde;
+    private Material material;
     
     public EstoqueGeral(){
         idEstoque = 0;
@@ -34,13 +34,15 @@ public class EstoqueGeral {
         this.qtde = qtde;
     }
 
-    public int getIdMaterial() {
-        return idMaterial;
+    public Material getMaterial() {
+        return material;
     }
 
-    public void setIdMaterial(int idMaterial) {
-        this.idMaterial = idMaterial;
+    public void setMaterial(Material material) {
+        this.material = material;
     }
+
+    
     
     
     
