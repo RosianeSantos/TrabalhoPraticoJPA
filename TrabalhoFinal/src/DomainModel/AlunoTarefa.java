@@ -10,8 +10,34 @@ package DomainModel;
  */
 public class AlunoTarefa {
     int idalunotarefa;
-    int idaluno;
-    int idtarefa;
+    Aluno aluno;
+    TarefasSemanais tarefa;
+
+    public int getIdalunotarefa() {
+        return idalunotarefa;
+    }
+
+    public void setIdalunotarefa(int idalunotarefa) {
+        this.idalunotarefa = idalunotarefa;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public TarefasSemanais getTarefa() {
+        return tarefa;
+    }
+
+    public void setTarefa(TarefasSemanais tarefa) {
+        this.tarefa = tarefa;
+    }
+    
+    
     
     
     

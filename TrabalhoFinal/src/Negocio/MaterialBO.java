@@ -15,11 +15,12 @@ public class MaterialBO {
     
     private MaterialDAO materialDAO = new MaterialDAO();
     
-    public void Salvar(Material material){
+    public boolean Salvar(Material material){
         if(material.getDescricao().trim().length() == 0){
             throw new RuntimeException("O nome nao pode ser vazio!");
         }
         materialDAO.Salvar(material);
+        return true;
     }
     public Material Abrir(int codigo){
         return materialDAO.Abrir(codigo);
