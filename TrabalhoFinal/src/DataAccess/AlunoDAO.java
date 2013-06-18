@@ -2,19 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  * 
- * create table alunos(
-idaluno int not null auto_increment primary key,
-nome varchar(50),
-cpf varchar(14),
-rg varchar(14),
-telefone varchar(14),
-email varchar(30),
-media real,
-nomeresp varchar(40),
-telefoneresp varchar(14),
-idcurso int,
-foreign key (idcurso) references cursos(idcurso))
- * 
  */
 package DataAccess;
 
