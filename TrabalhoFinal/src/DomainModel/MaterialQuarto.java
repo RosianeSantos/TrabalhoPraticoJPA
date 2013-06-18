@@ -47,6 +47,37 @@ public class MaterialQuarto {
     public void setQtde(int qtde) {
         this.qtde = qtde;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + this.idMaterialQuarto;
+        hash = 97 * hash + Objects.hashCode(this.material);
+        hash = 97 * hash + Objects.hashCode(this.quarto);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MaterialQuarto other = (MaterialQuarto) obj;
+        if (this.idMaterialQuarto != other.idMaterialQuarto) {
+            return false;
+        }
+        if (!Objects.equals(this.material, other.material)) {
+            return false;
+        }
+        if (!Objects.equals(this.quarto, other.quarto)) {
+            return false;
+        }
+        return true;
+    }
+    
     
     
     
