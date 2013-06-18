@@ -34,8 +34,8 @@ public class AlunoDAO {
                 comando.setString(1, obj.getNome());
                 comando.setString(2, obj.getCpf());
                 comando.setString(3, obj.getRg());
-                comando.setString(4, obj.getTelefone());
-                comando.setString(5, obj.getEmail());
+                comando.setObject(4, obj.getTelefone());
+                comando.setObject(5, obj.getEmail());
                 comando.setDouble(6, obj.getMedia());
                 comando.setString(7, obj.getNomeresp());
                 comando.setString(8, obj.getTelefoneresp());
@@ -46,8 +46,8 @@ public class AlunoDAO {
                 comando.setString(1, obj.getNome());
                 comando.setString(2, obj.getCpf());
                 comando.setString(3, obj.getRg());
-                comando.setString(4, obj.getTelefone());
-                comando.setString(5, obj.getEmail());
+                comando.setObject(4, obj.getTelefone());
+                comando.setObject(5, obj.getEmail());
                 comando.setDouble(6, obj.getMedia());
                 comando.setString(7, obj.getNomeresp());
                 comando.setString(8, obj.getTelefoneresp());
@@ -77,8 +77,8 @@ public class AlunoDAO {
             aluno.setNome(resultado.getString("nome"));
             aluno.setRg(resultado.getString("rg"));
             aluno.setCpf(resultado.getString("cpf"));
-            aluno.setTelefone(resultado.getString("telefone"));
-            aluno.setEmail(resultado.getString("email"));
+            aluno.setTelefone(resultado.getObject("telefone"));
+            aluno.setEmail(resultado.getObject("email"));
             aluno.setMedia(resultado.getDouble("media"));
             aluno.setNomeresp(resultado.getString("nomeresp"));
             aluno.setTelefoneresp(resultado.getString("telefoneresp"));
@@ -170,8 +170,8 @@ public class AlunoDAO {
                 temp.setNome(resultado.getString("nome"));
                 temp.setRg(resultado.getString("rg"));
                 temp.setCpf(resultado.getString("cpf"));
-                temp.setTelefone(resultado.getString("telefone"));
-                temp.setEmail(resultado.getString("email"));
+                temp.setTelefone(resultado.getObject("telefone"));
+                temp.setEmail(resultado.getObject("email"));
                 temp.setMedia(resultado.getDouble("media"));
                 temp.setNomeresp(resultado.getString("nomeresp"));
                 temp.setTelefoneresp(resultado.getString("telefoneresp"));
