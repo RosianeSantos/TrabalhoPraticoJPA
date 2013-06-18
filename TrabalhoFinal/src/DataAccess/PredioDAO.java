@@ -1,14 +1,7 @@
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
- * 
-create table predios(
-idpredio int not null auto_increment primary key,
-nome varchar(50),
-idfuncionario int,
-idcampus int,
-foreign key (idfuncionario) references funcionarios(idfuncionario),
-foreign key (idcampus) references campus(idcampus))
+ *
  */
 package DataAccess;
 
