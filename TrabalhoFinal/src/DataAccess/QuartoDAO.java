@@ -126,8 +126,8 @@ public class QuartoDAO {
             String sql = "select * from quartos ";
             String where = "";
             
-            if(filtro.getNumero().length() > 0){
-                where = "descricao like '%"+filtro.getNumero()+"%'";
+            if(filtro.getNumero()> 0){
+                where = "numero ="+filtro.getNumero()+"%'";
             }
                        
             
