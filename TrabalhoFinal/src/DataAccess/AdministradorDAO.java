@@ -3,11 +3,6 @@
  * and open the template in the editor.
  * 
  * 
-create table administrador(
-idadministrador int not null primary key,
-usuario varchar(20),
-senha varchar(18))
- * 
  */
 package DataAccess;
 

@@ -11,6 +11,7 @@ import java.util.Date;
  * @author Iara
  */
 public class Alocacao {
+    private int idalocacao;
     private int idaluno;
     private int idquarto;
     private Date dataEntrada;
@@ -18,11 +19,23 @@ public class Alocacao {
     private String semestreletivo;
     
     public Alocacao(){
+        idalocacao = 0;
+        idaluno = 0;
+        idquarto = 0;
         semestreletivo = "";
         dataEntrada = new Date();
         dataSaida = new Date();
     }
 
+    public int getIdalocacao() {
+        return idalocacao;
+    }
+
+    public void setIdalocacao(int idalocacao) {
+        this.idalocacao = idalocacao;
+    }
+
+    
     public int getIdaluno() {
         return idaluno;
     }
