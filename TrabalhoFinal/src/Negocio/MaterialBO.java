@@ -19,6 +19,9 @@ public class MaterialBO {
         if(material.getDescricao().trim().length() == 0){
             throw new RuntimeException("O nome nao pode ser vazio!");
         }
+        if (material.getDescricao().length() > 50){
+            throw new RuntimeException("O nome esta além do tamanho permitido!");
+        }
         materialDAO.Salvar(material);
         return true;
     }
