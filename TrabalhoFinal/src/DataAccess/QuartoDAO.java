@@ -19,17 +19,6 @@ import java.util.logging.Logger;
  * @author Iara
  * 
  * 
-create table quartos(
-idquarto int not null auto_increment primary key,
-numero 
-int,
-banheiro boolean,
-idpredio int,
-foreign key (idpredio) references predios
-(idpredio))
-
-
- * 
  */
 public class QuartoDAO {
     private BancodeDados bd;
