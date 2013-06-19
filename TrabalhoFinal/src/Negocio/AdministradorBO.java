@@ -21,6 +21,9 @@ public class AdministradorBO {
         if (administrador.getUsuario().length() > 20){
             throw new RuntimeException("O usuario esta além do tamanho permitido!");
         }
+        if (administrador.getSenha().trim().length() > 18){
+            throw new RuntimeException("A senha deve possuir menos que 18 caracteres!");
+        }
         administradorDAO.Salvar(administrador);
         return true;
     }

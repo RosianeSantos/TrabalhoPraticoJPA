@@ -21,6 +21,18 @@ public class FuncionarioBO {
         if (funcionario.getNome().length() > 50){
             throw new RuntimeException("O nome esta além do tamanho permitido!");
         }
+        if (funcionario.getCpf().trim().length() == 0){
+            throw new RuntimeException("O CPF nao pode ser vazio!");
+        }
+        if (funcionario.getCpf().length() > 14){
+            throw new RuntimeException("O CPF esta acima do tamanho permitido!");
+        }
+        if (funcionario.getTelefone().trim().length() == 0){
+            throw new RuntimeException("O telefone nao pode ser vazio!");
+        }
+        if (funcionario.getTelefone().length() > 14){
+            throw new RuntimeException("O telefone esta acima do tamanho permitido!");
+        }
         funcionarioDAO.Salvar(funcionario);
         return true;
     }
