@@ -19,7 +19,28 @@ public class CampusBO {
             throw new RuntimeException("O nome nao pode ser vazio!");
         }
         if (campus.getNome().length() > 50){
-            throw new RuntimeException("O nome esta além do tamanho permitido!");
+            throw new RuntimeException("O nome está além do tamanho permitido!");
+        }
+        if(campus.getTelefone().trim().length() == 0){
+            throw new RuntimeException("O telefone nao pode ser vazio!");
+        }
+        if (campus.getTelefone().length() > 14){
+            throw new RuntimeException("O telefone está além do tamanho permitido!");
+        }
+        if(campus.getCidade().trim().length() == 0){
+            throw new RuntimeException("O campo cidade nao pode ser vazio!");
+        }
+        if (campus.getCidade().length() > 30){
+            throw new RuntimeException("Campo cidade está além do tamanho permitido!");
+        }
+        if(campus.getRua().trim().length() == 0){
+            throw new RuntimeException("Campo rua nao pode ser vazio!");
+        }
+        if (campus.getRua().length() > 40){
+            throw new RuntimeException("Campo rua esta além do tamanho permitido!");
+        }
+        if (campus.getNumero() == 0){
+            throw new RuntimeException("Numero Inválido!");
         }
         campusDAO.Salvar(campus);
         return true;
@@ -31,3 +52,4 @@ public class CampusBO {
         campusDAO.Apagar(campus);
     }
 }
+

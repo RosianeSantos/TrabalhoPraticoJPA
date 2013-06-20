@@ -21,6 +21,12 @@ public class PredioBO {
         if (predio.getNome().length() > 50){
             throw new RuntimeException("O nome esta além do tamanho permitido!");
         }
+        if (predio.getCodfuncionario() == 0){
+            throw new RuntimeException("Codigo do Funcionario Invalido!");
+        }
+        if (predio.getCodcampus() == 0){
+            throw new RuntimeException("Codigo do Campus Inválido!");
+        }
         predioDAO.Salvar(predio);
         return true;
     }
@@ -32,3 +38,4 @@ public class PredioBO {
     }
     
 }
+

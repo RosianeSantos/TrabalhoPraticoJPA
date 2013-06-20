@@ -18,6 +18,9 @@ public class QuartoBO {
         if(quarto.getNumero() == 0){
             throw new RuntimeException("O numero nao pode ser igual a 0!");
         }
+        if(quarto.getCodpredio() == 0){
+            throw new RuntimeException("Codigo do predio Invalido!");
+        }
         quartoDAO.Salvar(quarto);
         return true;
     }
@@ -28,3 +31,4 @@ public class QuartoBO {
         quartoDAO.Apagar(quarto);
     }
 }
+
