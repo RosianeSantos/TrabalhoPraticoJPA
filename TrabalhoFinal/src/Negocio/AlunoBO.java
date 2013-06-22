@@ -21,6 +21,37 @@ public class AlunoBO {
         if (aluno.getNome().length() > 50){
             throw new RuntimeException("O nome esta além do tamanho permitido!");
         }
+        if(aluno.getCpf().trim().length() == 0){
+            throw new RuntimeException("O CPF nao pode ser vazio!");
+        }
+        if (aluno.getCpf().length() > 14){
+            throw new RuntimeException("O CPF esta além do tamanho permitido!");
+        }
+        if(aluno.getRg().trim().length() == 0){
+            throw new RuntimeException("O CPF nao pode ser vazio!");
+        }
+        if (aluno.getRg().length() > 14){
+            throw new RuntimeException("O CPF esta além do tamanho permitido!");
+        }
+        
+        //Validar: -telefone varchar(14)
+	//-email varchar(30)
+        
+        if(aluno.getNomeresp().trim().length() == 0){
+            throw new RuntimeException("O nome do responsavel nao pode ser vazio!");
+        }
+        if (aluno.getNomeresp().length() > 40){
+            throw new RuntimeException("O nome do responsavel esta além do tamanho permitido!");
+        }
+        if(aluno.getTelefoneresp().trim().length() == 0){
+            throw new RuntimeException("O CPF nao pode ser vazio!");
+        }
+        if (aluno.getTelefoneresp().length() > 14){
+            throw new RuntimeException("O CPF esta além do tamanho permitido!");
+        }
+        if(aluno.getIdcurso() == 0){
+            throw new RuntimeException("O Codigo do Curso nao pode ser 0!");
+        }
         alunoDAO.Salvar(aluno);
         return true;
     }
