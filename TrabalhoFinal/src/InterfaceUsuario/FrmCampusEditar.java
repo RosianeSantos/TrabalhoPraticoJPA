@@ -40,11 +40,12 @@ public class FrmCampusEditar extends javax.swing.JInternalFrame {
         BtnCancelar = new javax.swing.JButton();
         BtnLimpar = new javax.swing.JButton();
         BtnSalvar = new javax.swing.JButton();
+        BtnApagar = new javax.swing.JButton();
 
         setTitle("Editar Campus");
 
         PnlEditarCampus.setBackground(new java.awt.Color(255, 255, 255));
-        PnlEditarCampus.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Campus", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        PnlEditarCampus.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Campus", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         TxtCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,35 +69,36 @@ public class FrmCampusEditar extends javax.swing.JInternalFrame {
 
         BtnSalvar.setText("Salvar");
 
+        BtnApagar.setText("Apagar");
+
         javax.swing.GroupLayout PnlEditarCampusLayout = new javax.swing.GroupLayout(PnlEditarCampus);
         PnlEditarCampus.setLayout(PnlEditarCampusLayout);
         PnlEditarCampusLayout.setHorizontalGroup(
             PnlEditarCampusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlEditarCampusLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
                 .addGroup(PnlEditarCampusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(PnlEditarCampusLayout.createSequentialGroup()
-                        .addContainerGap(150, Short.MAX_VALUE)
-                        .addComponent(BtnSalvar)
-                        .addGap(18, 18, 18)
+                    .addGroup(PnlEditarCampusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(LblRua, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LblCidade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LblTelefone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(LblNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LblNumero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BtnSalvar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGroup(PnlEditarCampusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TxtNumero)
+                    .addComponent(TxtRua)
+                    .addComponent(TxtCidade)
+                    .addComponent(TxtTelefone)
+                    .addComponent(TxtNome)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlEditarCampusLayout.createSequentialGroup()
                         .addComponent(BtnLimpar)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnCancelar))
-                    .addGroup(PnlEditarCampusLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(PnlEditarCampusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(LblRua, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LblCidade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LblTelefone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(LblNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LblNumero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(PnlEditarCampusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TxtNumero, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                            .addComponent(TxtRua)
-                            .addComponent(TxtCidade)
-                            .addComponent(TxtTelefone)
-                            .addComponent(TxtNome))))
-                .addContainerGap(55, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnApagar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnCancelar)))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         PnlEditarCampusLayout.setVerticalGroup(
             PnlEditarCampusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,11 +123,12 @@ public class FrmCampusEditar extends javax.swing.JInternalFrame {
                 .addGroup(PnlEditarCampusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LblNumero)
                     .addComponent(TxtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 22, Short.MAX_VALUE)
                 .addGroup(PnlEditarCampusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnCancelar)
                     .addComponent(BtnLimpar)
-                    .addComponent(BtnSalvar))
+                    .addComponent(BtnSalvar)
+                    .addComponent(BtnApagar))
                 .addContainerGap())
         );
 
@@ -154,6 +157,7 @@ public class FrmCampusEditar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_TxtCidadeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnApagar;
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JButton BtnSalvar;

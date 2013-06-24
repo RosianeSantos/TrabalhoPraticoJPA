@@ -59,35 +59,33 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="LblRua" alignment="0" max="32767" attributes="0"/>
+                          <Component id="LblCidade" alignment="0" max="32767" attributes="0"/>
+                          <Component id="LblTelefone" alignment="0" pref="100" max="32767" attributes="0"/>
+                          <Component id="LblNome" alignment="0" max="32767" attributes="0"/>
+                          <Component id="LblNumero" alignment="1" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="BtnSalvar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="50" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="TxtNumero" alignment="0" max="32767" attributes="0"/>
+                      <Component id="TxtRua" alignment="0" max="32767" attributes="0"/>
+                      <Component id="TxtCidade" alignment="0" max="32767" attributes="0"/>
+                      <Component id="TxtTelefone" alignment="0" max="32767" attributes="0"/>
+                      <Component id="TxtNome" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="150" max="32767" attributes="0"/>
-                          <Component id="BtnSalvar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="BtnLimpar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="BtnApagar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="BtnCancelar" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="LblRua" alignment="0" max="32767" attributes="0"/>
-                              <Component id="LblCidade" alignment="0" max="32767" attributes="0"/>
-                              <Component id="LblTelefone" alignment="0" pref="100" max="32767" attributes="0"/>
-                              <Component id="LblNome" alignment="0" max="32767" attributes="0"/>
-                              <Component id="LblNumero" alignment="1" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="TxtNumero" alignment="0" pref="202" max="32767" attributes="0"/>
-                              <Component id="TxtRua" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TxtCidade" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TxtTelefone" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TxtNome" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
                   </Group>
-                  <EmptySpace pref="55" max="32767" attributes="0"/>
+                  <EmptySpace pref="48" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -119,11 +117,12 @@
                       <Component id="LblNumero" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="TxtNumero" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" pref="22" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="BtnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BtnLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BtnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnApagar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -182,6 +181,11 @@
         <Component class="javax.swing.JButton" name="BtnSalvar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Salvar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnApagar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Apagar"/>
           </Properties>
         </Component>
       </SubComponents>
