@@ -50,6 +50,7 @@ public class FrmEditarMaterial extends javax.swing.JInternalFrame {
         BtnSalvar = new javax.swing.JButton();
         BtnLimpar = new javax.swing.JButton();
         BtnCancelar = new javax.swing.JButton();
+        BtnApagar = new javax.swing.JButton();
 
         setTitle("Editar Material");
 
@@ -86,25 +87,29 @@ public class FrmEditarMaterial extends javax.swing.JInternalFrame {
             }
         });
 
+        BtnApagar.setText("Apagar");
+
         javax.swing.GroupLayout PnlMaterialLayout = new javax.swing.GroupLayout(PnlMaterial);
         PnlMaterial.setLayout(PnlMaterialLayout);
         PnlMaterialLayout.setHorizontalGroup(
             PnlMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlMaterialLayout.createSequentialGroup()
-                .addGroup(PnlMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(22, 22, 22)
+                .addComponent(LblDescricao)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
+            .addGroup(PnlMaterialLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(PnlMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtnApagar)
                     .addGroup(PnlMaterialLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(BtnLimpar)
                         .addGap(18, 18, 18)
-                        .addComponent(BtnCancelar))
-                    .addGroup(PnlMaterialLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(LblDescricao)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48))
+                        .addComponent(BtnCancelar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PnlMaterialLayout.setVerticalGroup(
             PnlMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,12 +118,14 @@ public class FrmEditarMaterial extends javax.swing.JInternalFrame {
                 .addGroup(PnlMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 22, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addGroup(PnlMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSalvar)
                     .addComponent(BtnLimpar)
                     .addComponent(BtnCancelar))
-                .addGap(24, 24, 24))
+                .addGap(28, 28, 28)
+                .addComponent(BtnApagar)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,6 +191,7 @@ public class FrmEditarMaterial extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_BtnLimparActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnApagar;
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JButton BtnSalvar;
