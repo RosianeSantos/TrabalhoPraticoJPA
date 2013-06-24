@@ -74,17 +74,19 @@
                               <Component id="TxtCpf" alignment="0" max="32767" attributes="0"/>
                               <Component id="TxtTelefone" alignment="0" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="0" pref="65" max="32767" attributes="0"/>
                           <Component id="BtnSalvar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="BtnLimpar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnCancelar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="BtnApagar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="61" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -106,13 +108,14 @@
                       <Component id="TxtTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="LblTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" pref="26" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" pref="34" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="BtnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BtnLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BtnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnApagar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -162,6 +165,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Nome:"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnApagar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Apagar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnApagarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

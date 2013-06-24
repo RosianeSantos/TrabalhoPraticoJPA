@@ -57,6 +57,7 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
         LblCpf = new javax.swing.JLabel();
         BtnCancelar = new javax.swing.JButton();
         LblNome = new javax.swing.JLabel();
+        BtnApagar = new javax.swing.JButton();
 
         setTitle("Editar Funcionario");
         setAutoscrolls(true);
@@ -91,6 +92,13 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
 
         LblNome.setText("Nome:");
 
+        BtnApagar.setText("Apagar");
+        BtnApagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnApagarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -107,15 +115,17 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TxtNome)
                             .addComponent(TxtCpf)
-                            .addComponent(TxtTelefone)))
+                            .addComponent(TxtTelefone))
+                        .addGap(73, 73, 73))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 65, Short.MAX_VALUE)
                         .addComponent(BtnSalvar)
                         .addGap(18, 18, 18)
                         .addComponent(BtnLimpar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BtnCancelar)
                         .addGap(18, 18, 18)
-                        .addComponent(BtnCancelar)))
-                .addGap(73, 73, 73))
+                        .addComponent(BtnApagar)
+                        .addGap(0, 61, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,12 +142,13 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblTelefone))
-                .addGap(18, 26, Short.MAX_VALUE)
+                .addGap(18, 34, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSalvar)
                     .addComponent(BtnLimpar)
-                    .addComponent(BtnCancelar))
-                .addGap(25, 25, 25))
+                    .addComponent(BtnCancelar)
+                    .addComponent(BtnApagar))
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -198,7 +209,12 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_BtnCancelarActionPerformed
 
+    private void BtnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnApagarActionPerformed
+            // TODO add your handling code here:
+    }//GEN-LAST:event_BtnApagarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnApagar;
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JButton BtnSalvar;
