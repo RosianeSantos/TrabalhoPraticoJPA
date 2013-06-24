@@ -9,6 +9,7 @@ import DomainModel.Funcionario;
 import Negocio.FuncionarioBO;
 import java.util.List;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -102,6 +103,11 @@ public class FrmListaFuncionario extends javax.swing.JInternalFrame {
         });
 
         BtnVoltar.setText("Voltar");
+        BtnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PnlListaFuncionarioLayout = new javax.swing.GroupLayout(PnlListaFuncionario);
         PnlListaFuncionario.setLayout(PnlListaFuncionarioLayout);
@@ -131,7 +137,7 @@ public class FrmListaFuncionario extends javax.swing.JInternalFrame {
                     .addComponent(BtnPesquisar))
                 .addGap(26, 26, 26)
                 .addComponent(SpnlListaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(BtnVoltar)
                 .addContainerGap())
         );
@@ -173,6 +179,13 @@ public class FrmListaFuncionario extends javax.swing.JInternalFrame {
         
         preencheTabela(lista);
     }//GEN-LAST:event_BtnPesquisarActionPerformed
+
+    private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Sair?") 
+                == 0){
+            this.dispose();
+        }
+    }//GEN-LAST:event_BtnVoltarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnPesquisar;

@@ -76,7 +76,7 @@ public class MaterialDAO {
 
     public List<Material> listarTodos() {
         try {
-            PreparedStatement comando = bd.getConexao().prepareStatement("select * from metodopags ");
+            PreparedStatement comando = bd.getConexao().prepareStatement("select * from materiais ");
             ResultSet resultado = comando.executeQuery();
             
             List<Material> material = new LinkedList<>();
@@ -127,7 +127,7 @@ public class MaterialDAO {
                 Material temp = new Material(0,"");
                 
                 temp.setIdMaterial(resultado.getInt("idmaterial"));
-                temp.setDescricao("descricao");                
+                temp.setDescricao(resultado.getString("descricao"));                
                 
                 material.add(temp);
             }

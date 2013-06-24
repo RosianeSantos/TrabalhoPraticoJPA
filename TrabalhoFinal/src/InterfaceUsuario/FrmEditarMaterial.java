@@ -13,16 +13,28 @@ import javax.swing.JOptionPane;
  * @author Iara
  */
 public class FrmEditarMaterial extends javax.swing.JInternalFrame {
-    
-    MaterialBO mbo = new MaterialBO();
+    Material material;
+    MaterialBO bo;
 
     /**
      * Creates new form FrmCadastroMaterial
      */
-    public FrmEditarMaterial() {
+    public FrmEditarMaterial(Material m, MaterialBO mbo) {
         initComponents();
+        this.material = m;
+        this.bo = mbo;
+        
+        carregaCampos();
     }
 
+    private void carregaCampos() {
+        TxtDescricao.setText(material.getDescricao());
+        
+     }
+
+    private void carregaObjeto() {
+        material.setDescricao(TxtDescricao.getText());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,6 +73,11 @@ public class FrmEditarMaterial extends javax.swing.JInternalFrame {
         });
 
         BtnLimpar.setText("Limpar Campos");
+        BtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLimparActionPerformed(evt);
+            }
+        });
 
         BtnCancelar.setText("Cancelar");
         BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +113,7 @@ public class FrmEditarMaterial extends javax.swing.JInternalFrame {
                 .addGroup(PnlMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 22, Short.MAX_VALUE)
                 .addGroup(PnlMaterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSalvar)
                     .addComponent(BtnLimpar)
@@ -130,11 +147,11 @@ public class FrmEditarMaterial extends javax.swing.JInternalFrame {
 
     private void BtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalvarActionPerformed
 
-        Material mat = new Material(0, "");
-        mat.setDescricao(TxtDescricao.getText());
+        
         try {
             if (JOptionPane.showConfirmDialog(rootPane, "Deseja Salvar?") == 0) {
-                if (mbo.Salvar(mat)) {
+                carregaObjeto();
+                if (bo.Salvar(material)) {
                     JOptionPane.showMessageDialog(rootPane, "Salvo com sucesso!");
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "Falha ao salvar! Favor verificar os dados!");
@@ -150,8 +167,21 @@ public class FrmEditarMaterial extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_BtnSalvarActionPerformed
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
-        this.dispose();
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Sair?") 
+                == 0){
+            this.dispose();
+        }
     }//GEN-LAST:event_BtnCancelarActionPerformed
+
+    private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja realmente limpar os campos?")
+                == 0) {
+            
+            TxtDescricao.setText(null);
+                       
+            JOptionPane.showMessageDialog(rootPane, "Pronto!");
+        }
+    }//GEN-LAST:event_BtnLimparActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCancelar;

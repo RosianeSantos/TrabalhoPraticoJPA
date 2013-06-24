@@ -4,19 +4,48 @@
  */
 package InterfaceUsuario;
 
+import DomainModel.Material;
+import Negocio.MaterialBO;
+import java.util.List;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author paulo_000
  */
 public class FrmListaMaterial extends javax.swing.JInternalFrame {
-
+    MaterialBO bo;
+    
     /**
      * Creates new form FrmListaMaterial
      */
     public FrmListaMaterial() {
         initComponents();
+        bo = new MaterialBO();
+        
+        List<Material> funcionarios = bo.listarTodos();
+        
+        preencheTabela(funcionarios);
     }
 
+    private void preencheTabela(List<Material> lista) {
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Id");
+        model.addColumn("Descrição");
+        
+        for (Material m : lista) {
+            Vector valores = new Vector();
+            valores.add(0,m.getIdMaterial());
+            valores.add(1,m.getDescricao());
+            
+            model.addRow(valores);
+        }
+        TblListaMaterial.setModel(model);
+        TblListaMaterial.repaint();
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,17 +57,17 @@ public class FrmListaMaterial extends javax.swing.JInternalFrame {
 
         PnlListaMaterial = new javax.swing.JPanel();
         SpnlListaProdutos = new javax.swing.JScrollPane();
-        TblListaProdutos = new javax.swing.JTable();
+        TblListaMaterial = new javax.swing.JTable();
         TxtPesquisar = new javax.swing.JTextField();
         BtnPesquisar = new javax.swing.JButton();
         BtnVoltar = new javax.swing.JButton();
 
-        setTitle("Lista de Produtos");
+        setTitle("Lista de Materiais");
 
         PnlListaMaterial.setBackground(new java.awt.Color(255, 255, 255));
-        PnlListaMaterial.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Produtos", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        PnlListaMaterial.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Materiais", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
-        TblListaProdutos.setModel(new javax.swing.table.DefaultTableModel(
+        TblListaMaterial.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -49,14 +78,29 @@ public class FrmListaMaterial extends javax.swing.JInternalFrame {
                 {null, null}
             },
             new String [] {
-                "ID", "Descroção"
+                "ID", "Descrição"
             }
         ));
-        SpnlListaProdutos.setViewportView(TblListaProdutos);
+        TblListaMaterial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TblListaMaterialMouseClicked(evt);
+            }
+        });
+        SpnlListaProdutos.setViewportView(TblListaMaterial);
 
         BtnPesquisar.setText("Pesquisar");
+        BtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPesquisarActionPerformed(evt);
+            }
+        });
 
         BtnVoltar.setText("Voltar");
+        BtnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PnlListaMaterialLayout = new javax.swing.GroupLayout(PnlListaMaterial);
         PnlListaMaterial.setLayout(PnlListaMaterialLayout);
@@ -86,7 +130,7 @@ public class FrmListaMaterial extends javax.swing.JInternalFrame {
                     .addComponent(BtnPesquisar))
                 .addGap(26, 26, 26)
                 .addComponent(SpnlListaProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(BtnVoltar)
                 .addContainerGap())
         );
@@ -110,12 +154,38 @@ public class FrmListaMaterial extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TblListaMaterialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblListaMaterialMouseClicked
+        Object valor = TblListaMaterial.getValueAt( TblListaMaterial.getSelectedRow(), 0);
+        Material m = bo.Abrir((int)valor);
+        FrmEditarMaterial janela = new FrmEditarMaterial(m, bo);
+        this.getParent().add(janela);
+        janela.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_TblListaMaterialMouseClicked
+
+    private void BtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPesquisarActionPerformed
+        Material m = new Material(0, "");
+        m.setDescricao(TxtPesquisar.getText());
+                
+        List<Material> lista = bo.buscar(m);
+        
+        preencheTabela(lista);
+    }//GEN-LAST:event_BtnPesquisarActionPerformed
+
+    private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Sair?") 
+                == 0){
+            this.dispose();
+        }
+    }//GEN-LAST:event_BtnVoltarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnPesquisar;
     private javax.swing.JButton BtnVoltar;
     private javax.swing.JPanel PnlListaMaterial;
     private javax.swing.JScrollPane SpnlListaProdutos;
-    private javax.swing.JTable TblListaProdutos;
+    private javax.swing.JTable TblListaMaterial;
     private javax.swing.JTextField TxtPesquisar;
     // End of variables declaration//GEN-END:variables
 }

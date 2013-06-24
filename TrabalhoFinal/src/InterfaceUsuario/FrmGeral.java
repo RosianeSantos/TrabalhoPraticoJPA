@@ -231,7 +231,9 @@ public class FrmGeral extends javax.swing.JFrame {
     }//GEN-LAST:event_MniTarefas1ActionPerformed
 
     private void MniMaterial2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MniMaterial2ActionPerformed
-        // TODO add your handling code here:
+        FrmListaMaterial janela = new FrmListaMaterial();
+        add(janela);
+        janela.setVisible(true);
     }//GEN-LAST:event_MniMaterial2ActionPerformed
 
     /**
