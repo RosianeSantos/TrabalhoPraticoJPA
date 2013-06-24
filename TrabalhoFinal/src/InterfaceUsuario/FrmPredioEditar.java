@@ -36,11 +36,12 @@ public class FrmPredioEditar extends javax.swing.JInternalFrame {
         BrnSalvar = new javax.swing.JButton();
         BtnLimpar = new javax.swing.JButton();
         BtnCancelar = new javax.swing.JButton();
+        BtnApagar = new javax.swing.JButton();
 
         setTitle("Editar Pedido");
 
         PnlEditarPedido.setBackground(new java.awt.Color(255, 255, 255));
-        PnlEditarPedido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Pedido", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        PnlEditarPedido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Pedido", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
         PnlEditarPedido.setToolTipText("Editar Pedido");
         PnlEditarPedido.setAutoscrolls(true);
 
@@ -68,22 +69,30 @@ public class FrmPredioEditar extends javax.swing.JInternalFrame {
 
         BtnCancelar.setText("Cancelar");
 
+        BtnApagar.setText("Apagar");
+
         javax.swing.GroupLayout PnlEditarPedidoLayout = new javax.swing.GroupLayout(PnlEditarPedido);
         PnlEditarPedido.setLayout(PnlEditarPedidoLayout);
         PnlEditarPedidoLayout.setHorizontalGroup(
             PnlEditarPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlEditarPedidoLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(PnlEditarPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LblCodCampus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LblIdFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                    .addComponent(LblNome, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PnlEditarPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PnlEditarPedidoLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(PnlEditarPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LblCodCampus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LblIdFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(LblNome, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlEditarPedidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BrnSalvar)
+                        .addGap(44, 44, 44)))
                 .addGroup(PnlEditarPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PnlEditarPedidoLayout.createSequentialGroup()
-                        .addComponent(BrnSalvar)
-                        .addGap(18, 18, 18)
+                        .addComponent(BtnApagar)
+                        .addGap(17, 17, 17)
                         .addComponent(BtnLimpar)
                         .addGap(18, 18, 18)
                         .addComponent(BtnCancelar))
@@ -111,8 +120,9 @@ public class FrmPredioEditar extends javax.swing.JInternalFrame {
                 .addGroup(PnlEditarPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BrnSalvar)
                     .addComponent(BtnLimpar)
-                    .addComponent(BtnCancelar))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(BtnCancelar)
+                    .addComponent(BtnApagar))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -145,6 +155,7 @@ public class FrmPredioEditar extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BrnSalvar;
+    private javax.swing.JButton BtnApagar;
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JLabel LblCodCampus;

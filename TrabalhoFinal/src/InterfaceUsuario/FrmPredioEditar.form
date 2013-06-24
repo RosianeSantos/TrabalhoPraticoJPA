@@ -61,18 +61,27 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="LblCodCampus" alignment="0" max="32767" attributes="0"/>
-                      <Component id="LblIdFuncionario" alignment="0" pref="150" max="32767" attributes="0"/>
-                      <Component id="LblNome" alignment="0" pref="150" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="LblCodCampus" alignment="0" max="32767" attributes="0"/>
+                              <Component id="LblIdFuncionario" alignment="0" pref="150" max="32767" attributes="0"/>
+                              <Component id="LblNome" alignment="0" pref="150" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="BrnSalvar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="TxtNome" alignment="0" min="-2" pref="222" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="BrnSalvar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="BtnApagar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Component id="BtnLimpar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="BtnCancelar" min="-2" max="-2" attributes="0"/>
@@ -109,8 +118,9 @@
                       <Component id="BrnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BtnLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BtnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnApagar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                  <EmptySpace pref="38" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -156,6 +166,11 @@
         <Component class="javax.swing.JButton" name="BtnCancelar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnApagar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Apagar"/>
           </Properties>
         </Component>
       </SubComponents>
