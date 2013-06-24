@@ -6,6 +6,7 @@ package Negocio;
 
 import DataAccess.MaterialDAO;
 import DomainModel.Material;
+import java.util.List;
 
 /**
  *
@@ -30,6 +31,13 @@ public class MaterialBO {
     }
     public void Apagar(Material material){
         materialDAO.Apagar(material);
+    }
+    public List<Material> listarTodos(){
+        return materialDAO.listarTodos();
+    }
+    
+    public List<Material> buscar(Material filtro){
+        return materialDAO.buscar(filtro);
     }
     
 }
