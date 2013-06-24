@@ -33,10 +33,18 @@ public class AlunoBO {
         if (aluno.getRg().length() > 14){
             throw new RuntimeException("O CPF esta além do tamanho permitido!");
         }
-        
-        //Validar: -telefone varchar(14)
-	//-email varchar(30)
-        
+        if(aluno.getTelefone().trim().length() == 0){
+            throw new RuntimeException("O Telefone nao pode ser vazio!");
+        }
+        if (aluno.getTelefone().length() > 14){
+            throw new RuntimeException("O Telefone esta além do tamanho permitido!");
+        }
+        if(aluno.getEmail().trim().length() == 0){
+            throw new RuntimeException("O Email nao pode ser vazio!");
+        }
+        if (aluno.getEmail().length() > 14){
+            throw new RuntimeException("O Email esta além do tamanho permitido!");
+        }
         if(aluno.getNomeresp().trim().length() == 0){
             throw new RuntimeException("O nome do responsavel nao pode ser vazio!");
         }

@@ -8,12 +8,12 @@ package InterfaceUsuario;
  *
  * @author John Kevin
  */
-public class FrmAloncacaoEditar extends javax.swing.JInternalFrame {
+public class FrmEditarAlocacao extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FrmAloncacao
      */
-    public FrmAloncacaoEditar() {
+    public FrmEditarAlocacao() {
         initComponents();
     }
 
@@ -44,7 +44,7 @@ public class FrmAloncacaoEditar extends javax.swing.JInternalFrame {
         setTitle("Editar Alocação");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Alocação", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Alocação", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         TxtSemestre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

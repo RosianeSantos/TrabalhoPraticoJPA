@@ -40,15 +40,13 @@ public class MaterialQuartoDAO {
             if (obj.getIdMaterialQuarto() == 0) {
                 PreparedStatement comando = bd.getConexao().prepareStatement("insert into materialporquarto() values()");
                 comando.setObject(1, obj.getMaterial());
-                comando.setObject(2, obj.getQuarto());
-                comando.setInt(3, obj.getQtde());
+                comando.setInt(2, obj.getQtde());
                 comando.executeUpdate();
             } else {
                 PreparedStatement comando = bd.getConexao().prepareStatement("update materialporquarto set  where idmaterialquarto = ?");
                 comando.setObject(1, obj.getMaterial());
-                comando.setObject(2, obj.getQuarto());
-                comando.setInt(3, obj.getQtde());
-                comando.setInt(4, obj.getIdMaterialQuarto());
+                comando.setInt(2, obj.getQtde());
+                comando.setInt(3, obj.getIdMaterialQuarto());
                 comando.executeUpdate();
             }
             
@@ -70,8 +68,7 @@ public class MaterialQuartoDAO {
             resultado.first();
             
             materialquarto.setIdMaterialQuarto(resultado.getInt("idmaterialquarto"));
-            materialquarto.setMaterial(resultado.getObject(""));
-            materialquarto.setQuarto(resultado.getObject(""));
+            //materialquarto.setMaterial(resultado.getObject(""));
             materialquarto.setQtde(resultado.getInt("qtde"));
 
             return materialquarto;
@@ -104,9 +101,8 @@ public class MaterialQuartoDAO {
                 MaterialQuarto tmp = new MaterialQuarto();
                 
                 tmp.setIdMaterialQuarto(resultado.getInt("idmaterialquarto"));
-                tmp.getMaterial(resultado.getObject(""));
-                tmp.getQuarto(resultado.getObject(""));
-                tmp.getQtde(resultado.getInt("qtde"));
+                //tmp.setMaterial(resultado.get);
+                tmp.setQtde(resultado.getInt("qtde"));
               
                 materialquarto.add(tmp);
             }
@@ -123,13 +119,10 @@ public class MaterialQuartoDAO {
             String sql = "select * from materialporquarto ";
             String where = "";
             
-            if(filtro.getMaterial()> 0){
-                where = "idmaterial ="+filtro.getMaterial()+"%'";
-            }
-            
-            if(filtro.getQuarto()> 0){
-                where = "idquarto ="+filtro.getQuarto()+"%'";
-            }
+            //if(filtro.getMaterial()> 0){
+            //    where = "idmaterial ="+filtro.getMaterial()+"%'";
+            //}
+        
             
             if (filtro.getIdMaterialQuarto() > 0) {
                 if(where.length() > 0) {
@@ -153,9 +146,8 @@ public class MaterialQuartoDAO {
                 MaterialQuarto temp = new MaterialQuarto();
                 
                 temp.setIdMaterialQuarto(resultado.getInt("idmaterialquarto"));
-                temp.getMaterial(resultado.getObject(""));
-                temp.getQuarto(resultado.getObject(""));
-                temp.getQtde(resultado.getInt("qtde"));
+                //temp.setMaterial(resultado.getObject(""));
+                temp.setQtde(resultado.getInt("qtde"));
                 
                 materialquarto.add(temp);
             }

@@ -57,6 +57,11 @@ public class FrmCadastroMaterial extends javax.swing.JInternalFrame {
         });
 
         btnLimpar.setText("Limpar Campos");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +103,7 @@ public class FrmCadastroMaterial extends javax.swing.JInternalFrame {
                     .addComponent(btnCancelar)
                     .addComponent(btnLimpar)
                     .addComponent(btnSalvar))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,7 +114,10 @@ public class FrmCadastroMaterial extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtDescricaoActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.dispose();
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Sair?") 
+                == 0){
+            this.dispose();
+        }
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
@@ -133,6 +141,15 @@ public class FrmCadastroMaterial extends javax.swing.JInternalFrame {
             
     
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja realmente limpar os campos?")
+                == 0) {
+            txtDescricao.setText(null);
+                       
+            JOptionPane.showMessageDialog(rootPane, "Pronto!");
+        }
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;

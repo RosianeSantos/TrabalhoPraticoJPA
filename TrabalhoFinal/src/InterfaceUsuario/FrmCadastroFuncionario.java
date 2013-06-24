@@ -168,7 +168,6 @@ public class FrmCadastroFuncionario extends javax.swing.JInternalFrame {
     private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed
         if (JOptionPane.showConfirmDialog(rootPane, "Deseja realmente limpar os campos?")
                 == 0) {
-            TxtIDFuncionario.setText(null);
             TxtNome.setText(null);
             TxtCpf.setText(null);
             TxtTelefone.setText(null);

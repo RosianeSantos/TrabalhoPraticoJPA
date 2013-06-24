@@ -4,17 +4,51 @@
  */
 package InterfaceUsuario;
 
+import DomainModel.Aluno;
+import Negocio.AlunoBO;
+
 /**
  *
- * @author John Kevin
+ * @author Iara
  */
 public class FrmAlunoEditar extends javax.swing.JInternalFrame {
+    Aluno aluno;
+    AlunoBO bo;
 
     /**
      * Creates new form FrmAluno
      */
-    public FrmAlunoEditar() {
+    public FrmAlunoEditar(Aluno a, AlunoBO d) {
         initComponents();
+        this.aluno = a;
+        this.bo = d;
+
+        carregaCampos();
+    }
+    
+    private void carregaCampos() {
+        
+        TxtNome.setText(aluno.getNome());
+        TxtCpf.setText(aluno.getCpf());
+        TxtRg.setText(aluno.getRg());
+        //Telefone
+        //Email
+        TxtMedia.setText(Double.toString(aluno.getMedia()));
+        TxtIdCurso.setText(Integer.toString(aluno.getIdcurso()));
+        TxtNomeResponsavel.setText(aluno.getNomeresp());
+        TxtTelefoneResponsavel.setText(aluno.getTelefoneresp());
+     }
+
+    private void carregaObjeto() {
+        aluno.setNome(TxtNome.getText());
+        aluno.setCpf(TxtNome.getText());
+        aluno.setRg(TxtRg.getText());
+        //Telefone
+        // Email
+        aluno.setMedia(Double.parseDouble(TxtMedia.getText()));
+        aluno.setIdcurso(Integer.parseInt(TxtIdCurso.getText()));
+        aluno.setNomeresp(TxtNomeResponsavel.getText());
+        aluno.setTelefoneresp(TxtTelefoneResponsavel.getText());
     }
 
     /**
@@ -49,10 +83,8 @@ public class FrmAlunoEditar extends javax.swing.JInternalFrame {
         LblResponsavlel = new javax.swing.JLabel();
         LblTelefoneResponsavel = new javax.swing.JLabel();
 
-        setTitle("Editar Aluno");
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Aluno", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Aluno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         TxtTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +141,7 @@ public class FrmAlunoEditar extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 169, Short.MAX_VALUE)
+                        .addGap(0, 34, Short.MAX_VALUE)
                         .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(BtnLimparCampos)

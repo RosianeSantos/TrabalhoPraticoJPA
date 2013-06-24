@@ -4,9 +4,6 @@
  */
 package DomainModel;
 
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  *
  * @author Iara
@@ -16,8 +13,8 @@ public class Aluno {
     private String nome;
     private String cpf;
     private String rg;
-    private List<Telefone> telefone;
-    private List<Email> email;
+    private String telefone;
+    private String email;
     private double media;
     private String nomeresp;
     private String telefoneresp;
@@ -28,8 +25,8 @@ public class Aluno {
         nome = "";
         cpf = "";
         rg = "";
-        telefone = new LinkedList <>();
-        email = new LinkedList <>();
+        telefone = "";
+        email = "";
         media = 0;
         nomeresp = "";
         telefoneresp = "";
@@ -67,21 +64,6 @@ public class Aluno {
         this.rg = rg;
     }
 
-    public List<Telefone> getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(List<Telefone> telefone) {
-        this.telefone = telefone;
-    }
-
-    public List<Email> getEmail() {
-        return email;
-    }
-
-    public void setEmail(List<Email> email) {
-        this.email = email;
-    }
 
     public double getMedia() {
         return media;
@@ -114,6 +96,23 @@ public class Aluno {
     public void setIdcurso(int idcurso) {
         this.idcurso = idcurso;
     }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     
     
 }

@@ -4,11 +4,16 @@
  */
 package InterfaceUsuario;
 
+import DomainModel.TarefasSemanais;
+import Negocio.TarefaSemanaisBO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author paulo_000
  */
 public class FrmCadastroTarefas extends javax.swing.JInternalFrame {
+    TarefaSemanaisBO tsbo = new TarefaSemanaisBO();
 
     /**
      * Creates new form FrmCadastroTarefas
@@ -28,33 +33,38 @@ public class FrmCadastroTarefas extends javax.swing.JInternalFrame {
 
         PnlTarefas = new javax.swing.JPanel();
         LblDescricao = new javax.swing.JLabel();
-        TxtDescricao = new javax.swing.JTextField();
-        BtnSalvar = new javax.swing.JButton();
-        BtnLimpar = new javax.swing.JButton();
+        txtDescricao = new javax.swing.JTextField();
+        btnSalvar = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
         BtnCancelar = new javax.swing.JButton();
 
-        setTitle("Cadastar Tarefas");
+        setTitle("Cadastrar Tarefas");
 
         PnlTarefas.setBackground(new java.awt.Color(255, 255, 255));
-        PnlTarefas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastar Tarefas", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        PnlTarefas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastar Tarefas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         LblDescricao.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         LblDescricao.setText("Descrição:");
 
-        TxtDescricao.addActionListener(new java.awt.event.ActionListener() {
+        txtDescricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtDescricaoActionPerformed(evt);
+                txtDescricaoActionPerformed(evt);
             }
         });
 
-        BtnSalvar.setText("Salvar");
-        BtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSalvarActionPerformed(evt);
+                btnSalvarActionPerformed(evt);
             }
         });
 
-        BtnLimpar.setText("Limpar Campos");
+        btnLimpar.setText("Limpar Campos");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
         BtnCancelar.setText("Cancelar");
         BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -71,16 +81,16 @@ public class FrmCadastroTarefas extends javax.swing.JInternalFrame {
                 .addGroup(PnlTarefasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PnlTarefasLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(BtnLimpar)
+                        .addComponent(btnLimpar)
                         .addGap(18, 18, 18)
                         .addComponent(BtnCancelar))
                     .addGroup(PnlTarefasLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(LblDescricao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(48, 48, 48))
         );
         PnlTarefasLayout.setVerticalGroup(
@@ -89,11 +99,11 @@ public class FrmCadastroTarefas extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(PnlTarefasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 27, Short.MAX_VALUE)
+                    .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 35, Short.MAX_VALUE)
                 .addGroup(PnlTarefasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnSalvar)
-                    .addComponent(BtnLimpar)
+                    .addComponent(btnSalvar)
+                    .addComponent(btnLimpar)
                     .addComponent(BtnCancelar))
                 .addGap(24, 24, 24))
         );
@@ -118,26 +128,51 @@ public class FrmCadastroTarefas extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtDescricaoActionPerformed
+    private void txtDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescricaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtDescricaoActionPerformed
+    }//GEN-LAST:event_txtDescricaoActionPerformed
 
-    private void BtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalvarActionPerformed
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        TarefasSemanais ts = new TarefasSemanais(0, "");
+        ts.setDescricao(txtDescricao.getText());
+        try {
+            if (JOptionPane.showConfirmDialog(rootPane, "Deseja Salvar?") == 0) {
+                if (tsbo.Salvar(ts)) { 
+                    JOptionPane.showMessageDialog(rootPane, "Salvo com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Falha ao salvar! Favor verificar os dados!");
+                }
 
-      
-
-    }//GEN-LAST:event_BtnSalvarActionPerformed
+            } else {                
+                JOptionPane.showMessageDialog(rootPane, "Operação cancelada!");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar!");
+        }
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
-        this.dispose();
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Sair?") 
+                == 0){
+            this.dispose();
+        }
     }//GEN-LAST:event_BtnCancelarActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja realmente limpar os campos?")
+                == 0) {
+            txtDescricao.setText(null);
+                       
+            JOptionPane.showMessageDialog(rootPane, "Pronto!");
+        }
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCancelar;
-    private javax.swing.JButton BtnLimpar;
-    private javax.swing.JButton BtnSalvar;
     private javax.swing.JLabel LblDescricao;
     private javax.swing.JPanel PnlTarefas;
-    private javax.swing.JTextField TxtDescricao;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.JTextField txtDescricao;
     // End of variables declaration//GEN-END:variables
 }

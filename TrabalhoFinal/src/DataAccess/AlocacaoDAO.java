@@ -3,19 +3,11 @@
  * and open the template in the editor.
  * 
  * 
-create table alocacao(
-idalocacao int not null auto_increment primary key,
-idaluno int,
-idquarto int,
-semestreletivo varchar(20),
-dataentrada date,
-datasaida date,
-foreign key (idaluno) references alunos(idaluno),
-foreign key (idquarto) references quartos(idquarto))
  */
 package DataAccess;
 
 import DomainModel.Alocacao;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -43,16 +35,16 @@ public class AlocacaoDAO {
                 comando.setInt(1, obj.getIdaluno());
                 comando.setInt(2, obj.getIdquarto());
                 comando.setString(3, obj.getSemestreletivo());
-                comando.setDate(4, obj.getDataEntrada());
-                comando.setDate(5, obj.getDataSaida());
+                comando.setDate(4,(Date) obj.getDataEntrada());
+                comando.setDate(5,(Date) obj.getDataSaida());
                 comando.executeUpdate();
             } else {
                 PreparedStatement comando = bd.getConexao().prepareStatement("update alocacao set idaluno=?,idquarto=?,semestreletivo=?,dataentrada=?,datasaida=? where idalocacao = ?");
                 comando.setInt(1, obj.getIdaluno());
                 comando.setInt(2, obj.getIdquarto());
                 comando.setString(3, obj.getSemestreletivo());
-                comando.setDate(4, obj.getDataEntrada());
-                comando.setDate(5, obj.getDataSaida());
+                comando.setDate(4,(Date) obj.getDataEntrada());
+                comando.setDate(5,(Date) obj.getDataSaida());
                 comando.setInt(6, obj.getIdalocacao());
                 comando.executeUpdate();
             }

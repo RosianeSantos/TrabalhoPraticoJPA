@@ -8,12 +8,12 @@ package InterfaceUsuario;
  *
  * @author John Kevin
  */
-public class FrmAluno extends javax.swing.JInternalFrame {
+public class FrmCadastroAluno extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FrmAluno
      */
-    public FrmAluno() {
+    public FrmCadastroAluno() {
         initComponents();
     }
 

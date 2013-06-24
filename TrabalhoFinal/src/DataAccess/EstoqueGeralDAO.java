@@ -136,7 +136,7 @@ public class EstoqueGeralDAO {
                 
                 temp.setIdEstoque(resultado.getInt("idestoque"));
                 temp.setQtde(resultado.getInt("qtde"));
-                temp.setMaterial(resultado.getObject(""));
+                //temp.setMaterial(resultado.getObject(""));
                 
                 estoquegeral.add(temp);
             }

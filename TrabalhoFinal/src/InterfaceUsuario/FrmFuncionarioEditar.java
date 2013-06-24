@@ -4,19 +4,40 @@
  */
 package InterfaceUsuario;
 
+import DomainModel.Funcionario;
+import Negocio.FuncionarioBO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author John Kevin
  */
 public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
-
+    Funcionario funcionario;
+    FuncionarioBO bo;
     /**
      * Creates new form FrmFuncionario
      */
-    public FrmFuncionarioEditar() {
+    public FrmFuncionarioEditar(Funcionario f, FuncionarioBO fbo) {
         initComponents();
+        this.funcionario = f;
+        this.bo = fbo;
+        
+        carregaCampos();
     }
 
+    private void carregaCampos() {
+        TxtNome.setText(funcionario.getNome());
+        TxtCpf.setText(funcionario.getCpf());
+        TxtTelefone.setText(funcionario.getTelefone());
+        
+     }
+
+    private void carregaObjeto() {
+        funcionario.setNome(TxtNome.getText());
+        funcionario.setCpf(TxtCpf.getText());
+        funcionario.setTelefone(TxtTelefone.getText());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,17 +62,32 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
         setAutoscrolls(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Funcionario", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Funcionario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         LblTelefone.setText("Telefone:");
 
         BtnSalvar.setText("Salvar");
+        BtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSalvarActionPerformed(evt);
+            }
+        });
 
         BtnLimpar.setText("Limpar Campo");
+        BtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLimparActionPerformed(evt);
+            }
+        });
 
         LblCpf.setText("CPF:");
 
         BtnCancelar.setText("Cancelar");
+        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCancelarActionPerformed(evt);
+            }
+        });
 
         LblNome.setText("Nome:");
 
@@ -96,7 +132,7 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblTelefone))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 26, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSalvar)
                     .addComponent(BtnLimpar)
@@ -123,6 +159,45 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalvarActionPerformed
+        try {
+            if (JOptionPane.showConfirmDialog(rootPane, "Deseja Salvar?") == 0) {
+
+                carregaObjeto();
+                
+                if (bo.Salvar(funcionario)) {
+                    JOptionPane.showMessageDialog(rootPane, "Salvo com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Falha ao salvar! Consulte o administrador do sistema!");
+                }
+
+            } else {                
+                JOptionPane.showMessageDialog(rootPane, "Operação cancelada!");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar! Consulte o administrador do sistema!");
+        }
+    }//GEN-LAST:event_BtnSalvarActionPerformed
+
+    private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja realmente limpar os campos?")
+                == 0) {
+            TxtNome.setText(null);
+            TxtCpf.setText(null);
+            TxtTelefone.setText(null);
+                       
+            JOptionPane.showMessageDialog(rootPane, "Pronto!");
+        }
+    }//GEN-LAST:event_BtnLimparActionPerformed
+
+    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Sair?") 
+                == 0){
+            this.dispose();
+        }
+    }//GEN-LAST:event_BtnCancelarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnLimpar;

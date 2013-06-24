@@ -13,7 +13,6 @@ import java.util.Objects;
 public class MaterialQuarto {
     int idMaterialQuarto;
     Material material;
-    Quarto quarto;
     int qtde;
 
     public int getIdMaterialQuarto() {
@@ -32,13 +31,6 @@ public class MaterialQuarto {
         this.material = material;
     }
 
-    public Quarto getQuarto() {
-        return quarto;
-    }
-
-    public void setQuarto(Quarto quarto) {
-        this.quarto = quarto;
-    }
 
     public int getQtde() {
         return qtde;
@@ -53,7 +45,6 @@ public class MaterialQuarto {
         int hash = 3;
         hash = 97 * hash + this.idMaterialQuarto;
         hash = 97 * hash + Objects.hashCode(this.material);
-        hash = 97 * hash + Objects.hashCode(this.quarto);
         return hash;
     }
 
@@ -72,9 +63,7 @@ public class MaterialQuarto {
         if (!Objects.equals(this.material, other.material)) {
             return false;
         }
-        if (!Objects.equals(this.quarto, other.quarto)) {
-            return false;
-        }
+        
         return true;
     }
     

@@ -6,6 +6,7 @@ package Negocio;
 
 import DataAccess.FuncionarioDAO;
 import DomainModel.Funcionario;
+import java.util.List;
 
 /**
  *
@@ -43,4 +44,12 @@ public class FuncionarioBO {
         funcionarioDAO.Apagar(funcionario);
     }
     
+    public List<Funcionario> listarTodos(){
+        return funcionarioDAO.listarTodos();
+    }
+    
+    public List<Funcionario> buscar(Funcionario filtro){
+        return funcionarioDAO.buscar(filtro);
+    }
+            
 }

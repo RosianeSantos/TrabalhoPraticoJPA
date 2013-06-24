@@ -106,7 +106,7 @@
                       <Component id="TxtTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="LblTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" pref="26" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="BtnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BtnLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -129,6 +129,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Salvar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnSalvarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="TxtTelefone">
         </Component>
@@ -138,6 +141,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Limpar Campo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnLimparActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="LblCpf">
           <Properties>
@@ -148,6 +154,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnCancelarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="LblNome">
           <Properties>

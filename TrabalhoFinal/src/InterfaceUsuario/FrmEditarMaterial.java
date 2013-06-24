@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
  *
  * @author Iara
  */
-public class FrmCadastroMaterialEditar extends javax.swing.JInternalFrame {
+public class FrmEditarMaterial extends javax.swing.JInternalFrame {
     
     MaterialBO mbo = new MaterialBO();
 
     /**
      * Creates new form FrmCadastroMaterial
      */
-    public FrmCadastroMaterialEditar() {
+    public FrmEditarMaterial() {
         initComponents();
     }
 
@@ -42,7 +42,7 @@ public class FrmCadastroMaterialEditar extends javax.swing.JInternalFrame {
         setTitle("Editar Material");
 
         PnlMaterial.setBackground(new java.awt.Color(255, 255, 255));
-        PnlMaterial.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Material", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        PnlMaterial.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Material", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         LblDescricao.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         LblDescricao.setText("Descrição:");

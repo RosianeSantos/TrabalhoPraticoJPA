@@ -4,12 +4,18 @@
  */
 package InterfaceUsuario;
 
+
+import DomainModel.Campus;
+import Negocio.CampusBO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author John Kevin
  */
 public class FrmCampus extends javax.swing.JInternalFrame {
-
+    CampusBO cbo = new CampusBO();
+    
     /**
      * Creates new form FrmCampus
      */
@@ -44,7 +50,7 @@ public class FrmCampus extends javax.swing.JInternalFrame {
         setTitle("Cadastrar Campos");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Campus", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Campus", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         TxtCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,10 +69,25 @@ public class FrmCampus extends javax.swing.JInternalFrame {
         LblNumero.setText("Numero:");
 
         BtnCancelar.setText("Cancelar");
+        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCancelarActionPerformed(evt);
+            }
+        });
 
         BtnLimpar.setText("Limpar");
+        BtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLimparActionPerformed(evt);
+            }
+        });
 
         BtnSalvar.setText("Salvar");
+        BtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSalvarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -75,7 +96,7 @@ public class FrmCampus extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(142, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnSalvar)
                         .addGap(18, 18, 18)
                         .addComponent(BtnLimpar)
@@ -89,7 +110,7 @@ public class FrmCampus extends javax.swing.JInternalFrame {
                             .addComponent(LblTelefone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                             .addComponent(LblNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(LblNumero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGap(18, 29, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(TxtNumero, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
                             .addComponent(TxtRua)
@@ -101,7 +122,7 @@ public class FrmCampus extends javax.swing.JInternalFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblNome))
@@ -152,6 +173,48 @@ public class FrmCampus extends javax.swing.JInternalFrame {
     private void TxtCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCidadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtCidadeActionPerformed
+
+    private void BtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalvarActionPerformed
+        Campus c = new Campus(0,"", "", "", "",0);
+        c.setNome(TxtNome.getText());
+        c.setTelefone(TxtTelefone.getText());
+        c.setCidade(TxtCidade.getText());
+        c.setRua(TxtRua.getText());
+        c.setNumero(Integer.parseInt(TxtNumero.getText()));
+        try {
+            if (JOptionPane.showConfirmDialog(rootPane, "Deseja Salvar?") == 0) {
+                if (cbo.Salvar(c)) { 
+                    JOptionPane.showMessageDialog(rootPane, "Salvo com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Falha ao salvar! Favor verificar os dados!");
+                }
+
+            } else {                
+                JOptionPane.showMessageDialog(rootPane, "Operação cancelada!");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar!");
+        }
+    }//GEN-LAST:event_BtnSalvarActionPerformed
+
+    private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja realmente limpar os campos?")
+                == 0) {
+            TxtNome.setText(null);
+            TxtTelefone.setText(null);
+            TxtCidade.setText(null);           
+            TxtRua.setText(null);
+            TxtNumero.setText(null);
+            JOptionPane.showMessageDialog(rootPane, "Pronto!");
+        }
+    }//GEN-LAST:event_BtnLimparActionPerformed
+
+    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Sair?") 
+                == 0){
+            this.dispose();
+        }
+    }//GEN-LAST:event_BtnCancelarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCancelar;

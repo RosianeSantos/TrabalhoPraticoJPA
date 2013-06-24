@@ -2,15 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  * 
- * 
-create table alunosportarefa(
-idalunotarefa int not null auto_increment primary key,
-idaluno int,
-idtarefa int,
-foreign key (idaluno) references alunos(idaluno),
-foreign key (idtarefa) references tarefasemanais(idtarefa))
-
-
+ *
  */
 package DataAccess;
 
@@ -39,13 +31,13 @@ public class AlunoTarefaDAO {
         try{
             if (obj.getIdalunotarefa() == 0) {
                 PreparedStatement comando = bd.getConexao().prepareStatement("insert into alunosportarefa() values()");
-                comando.setObject(1, obj.getAluno());
-                comando.setObject(2, obj.getTarefa());
+                comando.setInt(1, obj.getIdaluno());
+                comando.setInt(2, obj.getIdtarefa());
                 comando.executeUpdate();
             } else {
                 PreparedStatement comando = bd.getConexao().prepareStatement("update alunosportarefa set  where idalunotarefa = ?");
-                comando.setObject(1, obj.getAluno());
-                comando.setObject(2, obj.getTarefa());
+                comando.setObject(1, obj.getIdaluno());
+                comando.setObject(2, obj.getIdtarefa());
                 comando.setInt(3, obj.getIdalunotarefa());
                 comando.executeUpdate();
             }
@@ -68,8 +60,9 @@ public class AlunoTarefaDAO {
             resultado.first();
             
             alunotarefa.setIdalunotarefa(resultado.getInt("idalunotarefa"));
-            alunotarefa.setAluno(resultado.getObject(""));
-            alunotarefa.setTarefa(resultado.getObject(""));
+            alunotarefa.setIdaluno(resultado.getInt("idaluno"));
+            alunotarefa.setIdtarefa(resultado.getInt("idtarefa"));
+            
 
             return alunotarefa;
 
@@ -101,8 +94,8 @@ public class AlunoTarefaDAO {
                 AlunoTarefa tmp = new AlunoTarefa();
                 
                 tmp.setIdalunotarefa(resultado.getInt("idalunotarefa"));
-                tmp.getAluno(resultado.getObject(""));
-                tmp.getTarefa(resultado.getObject(""));
+                tmp.setIdaluno(resultado.getInt("idaluno"));
+                tmp.setIdtarefa(resultado.getInt("idtarefa"));
               
                 alunotarefa.add(tmp);
             }
@@ -119,12 +112,12 @@ public class AlunoTarefaDAO {
             String sql = "select * from alunosportarefa ";
             String where = "";
             
-            if(filtro.getTarefa()> 0){
-                where = "idtarefa ="+filtro.getTarefa()+"%'";
+            if(filtro.getIdtarefa()> 0){
+                where = "idtarefa ="+filtro.getIdtarefa()+"%'";
             }
             
-            if(filtro.getAluno()> 0){
-                where = "idaluno ="+filtro.getAluno()+"%'";
+            if(filtro.getIdaluno()> 0){
+                where = "idaluno ="+filtro.getIdaluno()+"%'";
             }
             
             if (filtro.getIdalunotarefa() > 0) {
@@ -148,8 +141,8 @@ public class AlunoTarefaDAO {
                 AlunoTarefa temp = new AlunoTarefa();
                 
                 temp.setIdalunotarefa(resultado.getInt("idalunotarefa"));
-                temp.getAluno(resultado.getObject(""));
-                temp.getTarefa(resultado.getObject(""));
+                temp.setIdaluno(resultado.getInt("idaluno"));
+                temp.setIdtarefa(resultado.getInt("idtarefa"));
                 
                 alunotarefa.add(temp);
             }

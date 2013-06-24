@@ -34,7 +34,7 @@ public class FuncionarioDAO {
                 comando.setString(3,obj.getTelefone());
                 comando.executeUpdate();
             } else {
-                PreparedStatement comando = bd.getConexao().prepareStatement("update cursos set nome = ?, cpf = ?, telefone = ? where idfuncionario = ?");
+                PreparedStatement comando = bd.getConexao().prepareStatement("update funcionarios set nome = ?, cpf = ?, telefone = ? where idfuncionario = ?");
                 comando.setString(1, obj.getNome());
                 comando.setString(2,obj.getCpf());
                 comando.setString(3,obj.getTelefone());
@@ -139,7 +139,7 @@ public class FuncionarioDAO {
                 Funcionario temp = new Funcionario(0,"", "","");
                 
                 temp.setIdFuncionario(resultado.getInt("idfuncionario"));
-                temp.setNome("nome");                
+                temp.setNome(resultado.getString("nome"));                
                 temp.setCpf(resultado.getString("cpf"));
                 temp.setTelefone(resultado.getString("telefone"));
                 

@@ -9,9 +9,9 @@ package DomainModel;
  * @author Iara
  */
 public class AlunoTarefa {
-    int idalunotarefa;
-    Aluno aluno;
-    TarefasSemanais tarefa;
+    private int idalunotarefa;
+    private int idaluno;
+    private int idtarefa;
 
     public int getIdalunotarefa() {
         return idalunotarefa;
@@ -21,21 +21,23 @@ public class AlunoTarefa {
         this.idalunotarefa = idalunotarefa;
     }
 
-    public Aluno getAluno() {
-        return aluno;
+    public int getIdaluno() {
+        return idaluno;
     }
 
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
+    public void setIdaluno(int idaluno) {
+        this.idaluno = idaluno;
     }
 
-    public TarefasSemanais getTarefa() {
-        return tarefa;
+    public int getIdtarefa() {
+        return idtarefa;
     }
 
-    public void setTarefa(TarefasSemanais tarefa) {
-        this.tarefa = tarefa;
+    public void setIdtarefa(int idtarefa) {
+        this.idtarefa = idtarefa;
     }
+
+    
     
     
     
