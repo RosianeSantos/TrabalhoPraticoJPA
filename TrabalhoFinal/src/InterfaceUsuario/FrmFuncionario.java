@@ -27,11 +27,9 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         PnlFuncionario = new javax.swing.JPanel();
-        TxtIDFuncionario = new javax.swing.JTextField();
         TxtNome = new javax.swing.JTextField();
         TxtCpf = new javax.swing.JTextField();
         TxtTelefone = new javax.swing.JTextField();
-        LblIdFuncionario = new javax.swing.JLabel();
         LblNome = new javax.swing.JLabel();
         LblCpf = new javax.swing.JLabel();
         LblTelefone = new javax.swing.JLabel();
@@ -44,8 +42,6 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
         PnlFuncionario.setBackground(new java.awt.Color(255, 255, 255));
         PnlFuncionario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Funcionario", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
         PnlFuncionario.setAutoscrolls(true);
-
-        LblIdFuncionario.setText("ID:");
 
         LblNome.setText("Nome:");
 
@@ -68,13 +64,11 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
                 .addGroup(PnlFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PnlFuncionarioLayout.createSequentialGroup()
                         .addGroup(PnlFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LblIdFuncionario)
                             .addComponent(LblNome)
                             .addComponent(LblCpf)
                             .addComponent(LblTelefone))
                         .addGap(46, 46, 46)
                         .addGroup(PnlFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtIDFuncionario)
                             .addComponent(TxtNome)
                             .addComponent(TxtCpf)
                             .addComponent(TxtTelefone)))
@@ -90,11 +84,7 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
         PnlFuncionarioLayout.setVerticalGroup(
             PnlFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlFuncionarioLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(PnlFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TxtIDFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LblIdFuncionario))
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addGroup(PnlFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblNome))
@@ -106,7 +96,7 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
                 .addGroup(PnlFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblTelefone))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(PnlFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSalvar)
                     .addComponent(BtnLimpar)
@@ -138,12 +128,10 @@ public class FrmFuncionario extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JButton BtnSalvar;
     private javax.swing.JLabel LblCpf;
-    private javax.swing.JLabel LblIdFuncionario;
     private javax.swing.JLabel LblNome;
     private javax.swing.JLabel LblTelefone;
     private javax.swing.JPanel PnlFuncionario;
     private javax.swing.JTextField TxtCpf;
-    private javax.swing.JTextField TxtIDFuncionario;
     private javax.swing.JTextField TxtNome;
     private javax.swing.JTextField TxtTelefone;
     // End of variables declaration//GEN-END:variables

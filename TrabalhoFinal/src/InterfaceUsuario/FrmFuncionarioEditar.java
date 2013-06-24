@@ -35,9 +35,7 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
         BtnLimpar = new javax.swing.JButton();
         LblCpf = new javax.swing.JLabel();
         BtnCancelar = new javax.swing.JButton();
-        TxtIDFuncionario = new javax.swing.JTextField();
         LblNome = new javax.swing.JLabel();
-        LblIdFuncionario = new javax.swing.JLabel();
 
         setTitle("Editar Funcionario");
         setAutoscrolls(true);
@@ -57,8 +55,6 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
 
         LblNome.setText("Nome:");
 
-        LblIdFuncionario.setText("ID:");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -68,13 +64,11 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LblIdFuncionario)
                             .addComponent(LblNome)
                             .addComponent(LblCpf)
                             .addComponent(LblTelefone))
                         .addGap(46, 46, 46)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtIDFuncionario)
                             .addComponent(TxtNome)
                             .addComponent(TxtCpf)
                             .addComponent(TxtTelefone)))
@@ -90,11 +84,7 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TxtIDFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LblIdFuncionario))
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblNome))
@@ -106,7 +96,7 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblTelefone))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSalvar)
                     .addComponent(BtnLimpar)
@@ -138,11 +128,9 @@ public class FrmFuncionarioEditar extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JButton BtnSalvar;
     private javax.swing.JLabel LblCpf;
-    private javax.swing.JLabel LblIdFuncionario;
     private javax.swing.JLabel LblNome;
     private javax.swing.JLabel LblTelefone;
     private javax.swing.JTextField TxtCpf;
-    private javax.swing.JTextField TxtIDFuncionario;
     private javax.swing.JTextField TxtNome;
     private javax.swing.JTextField TxtTelefone;
     private javax.swing.JPanel jPanel1;

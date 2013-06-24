@@ -27,8 +27,6 @@ public class FrmPredio extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         PnlPedido = new javax.swing.JPanel();
-        TxtId = new javax.swing.JTextField();
-        LblId = new javax.swing.JLabel();
         TxtNome = new javax.swing.JTextField();
         LblNome = new javax.swing.JLabel();
         LblIdFuncionario = new javax.swing.JLabel();
@@ -45,8 +43,6 @@ public class FrmPredio extends javax.swing.JInternalFrame {
         PnlPedido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Pedido", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
         PnlPedido.setToolTipText("Pedido");
         PnlPedido.setAutoscrolls(true);
-
-        LblId.setText("ID:");
 
         TxtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,37 +75,27 @@ public class FrmPredio extends javax.swing.JInternalFrame {
             .addGroup(PnlPedidoLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(PnlPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LblId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LblCodCampus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LblIdFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                     .addComponent(LblNome, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PnlPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PnlPedidoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PnlPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(PnlPedidoLayout.createSequentialGroup()
-                                .addComponent(BrnSalvar)
-                                .addGap(18, 18, 18)
-                                .addComponent(BtnLimpar)
-                                .addGap(18, 18, 18)
-                                .addComponent(BtnCancelar))
-                            .addGroup(PnlPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(TxtIdFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                                .addComponent(TxtCodCampus))))
-                    .addGroup(PnlPedidoLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(TxtId, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BrnSalvar)
+                        .addGap(18, 18, 18)
+                        .addComponent(BtnLimpar)
+                        .addGap(18, 18, 18)
+                        .addComponent(BtnCancelar))
+                    .addGroup(PnlPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(TxtIdFuncionario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                        .addComponent(TxtCodCampus)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         PnlPedidoLayout.setVerticalGroup(
             PnlPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlPedidoLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(PnlPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TxtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LblId))
-                .addGap(18, 18, 18)
+                .addGap(22, 22, 22)
                 .addGroup(PnlPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblNome))
@@ -121,12 +107,12 @@ public class FrmPredio extends javax.swing.JInternalFrame {
                 .addGroup(PnlPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TxtCodCampus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblCodCampus))
-                .addGap(42, 42, 42)
+                .addGap(30, 30, 30)
                 .addGroup(PnlPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BrnSalvar)
                     .addComponent(BtnLimpar)
                     .addComponent(BtnCancelar))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -162,12 +148,10 @@ public class FrmPredio extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JLabel LblCodCampus;
-    private javax.swing.JLabel LblId;
     private javax.swing.JLabel LblIdFuncionario;
     private javax.swing.JLabel LblNome;
     private javax.swing.JPanel PnlPedido;
     private javax.swing.JTextField TxtCodCampus;
-    private javax.swing.JTextField TxtId;
     private javax.swing.JTextField TxtIdFuncionario;
     private javax.swing.JTextField TxtNome;
     // End of variables declaration//GEN-END:variables

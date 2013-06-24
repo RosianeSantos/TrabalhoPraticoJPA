@@ -75,7 +75,6 @@
                               <Component id="LblCidade" alignment="0" max="32767" attributes="0"/>
                               <Component id="LblTelefone" alignment="0" pref="100" max="32767" attributes="0"/>
                               <Component id="LblNome" alignment="0" max="32767" attributes="0"/>
-                              <Component id="LblIdCampus" alignment="0" max="32767" attributes="0"/>
                               <Component id="LblNumero" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="32767" attributes="0"/>
@@ -85,7 +84,6 @@
                               <Component id="TxtCidade" alignment="0" max="32767" attributes="0"/>
                               <Component id="TxtTelefone" alignment="0" max="32767" attributes="0"/>
                               <Component id="TxtNome" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TxtIdCampus" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -96,15 +94,10 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="TxtIdCampus" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="LblIdCampus" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="TxtNome" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="LblNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblNome" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -122,9 +115,9 @@
                       <Component id="LblRua" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="TxtNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="LblNumero" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="TxtNumero" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -138,11 +131,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="TxtIdCampus">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtIdCampusActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JTextField" name="TxtNome">
         </Component>
         <Component class="javax.swing.JTextField" name="TxtTelefone">
@@ -155,11 +143,6 @@
         <Component class="javax.swing.JTextField" name="TxtRua">
         </Component>
         <Component class="javax.swing.JTextField" name="TxtNumero">
-        </Component>
-        <Component class="javax.swing.JLabel" name="LblIdCampus">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ID: "/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="LblNome">
           <Properties>

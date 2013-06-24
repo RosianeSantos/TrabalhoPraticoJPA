@@ -27,13 +27,11 @@ public class FrmAloncacao extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        TxtIdAlocacao = new javax.swing.JTextField();
         TxtIdAluno = new javax.swing.JTextField();
         TxtIdquarto = new javax.swing.JTextField();
         TxtDataEntrada = new javax.swing.JTextField();
         TxtDataSaida = new javax.swing.JTextField();
         TxtSemestre = new javax.swing.JTextField();
-        LblId = new javax.swing.JLabel();
         LblIdAluno = new javax.swing.JLabel();
         LblIdQuarto = new javax.swing.JLabel();
         LblDataEntrada = new javax.swing.JLabel();
@@ -53,8 +51,6 @@ public class FrmAloncacao extends javax.swing.JInternalFrame {
                 TxtSemestreActionPerformed(evt);
             }
         });
-
-        LblId.setText("ID:");
 
         LblIdAluno.setText("ID Aluno:");
 
@@ -96,29 +92,20 @@ public class FrmAloncacao extends javax.swing.JInternalFrame {
                                 .addComponent(BtnLimpar)
                                 .addGap(18, 18, 18)
                                 .addComponent(BtnCancelar))))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(LblId, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-                            .addGap(37, 37, 37)
-                            .addComponent(TxtIdAlocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(LblIdQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(LblIdAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(37, 37, 37)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(TxtIdquarto, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                                .addComponent(TxtIdAluno)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(LblIdQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LblIdAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TxtIdquarto, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
+                            .addComponent(TxtIdAluno))))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TxtIdAlocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LblId))
-                .addGap(21, 21, 21)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TxtIdAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblIdAluno))
@@ -175,13 +162,11 @@ public class FrmAloncacao extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnSalvar;
     private javax.swing.JLabel LblDataEntrada;
     private javax.swing.JLabel LblDataSaida;
-    private javax.swing.JLabel LblId;
     private javax.swing.JLabel LblIdAluno;
     private javax.swing.JLabel LblIdQuarto;
     private javax.swing.JLabel LblSemestre;
     private javax.swing.JTextField TxtDataEntrada;
     private javax.swing.JTextField TxtDataSaida;
-    private javax.swing.JTextField TxtIdAlocacao;
     private javax.swing.JTextField TxtIdAluno;
     private javax.swing.JTextField TxtIdquarto;
     private javax.swing.JTextField TxtSemestre;
