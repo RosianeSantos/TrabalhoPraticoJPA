@@ -32,11 +32,12 @@ public class FrmTarefasEditar extends javax.swing.JInternalFrame {
         BtnSalvar = new javax.swing.JButton();
         BtnLimpar = new javax.swing.JButton();
         BtnCancelar = new javax.swing.JButton();
+        BtnApagar = new javax.swing.JButton();
 
         setTitle("Editar Trefas");
 
         PnlTarefas.setBackground(new java.awt.Color(255, 255, 255));
-        PnlTarefas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Tarefas", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        PnlTarefas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Tarefas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         LblDescricao.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         LblDescricao.setText("Descrição:");
@@ -63,25 +64,29 @@ public class FrmTarefasEditar extends javax.swing.JInternalFrame {
             }
         });
 
+        BtnApagar.setText("Apagar");
+
         javax.swing.GroupLayout PnlTarefasLayout = new javax.swing.GroupLayout(PnlTarefas);
         PnlTarefas.setLayout(PnlTarefasLayout);
         PnlTarefasLayout.setHorizontalGroup(
             PnlTarefasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlTarefasLayout.createSequentialGroup()
-                .addGroup(PnlTarefasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(PnlTarefasLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(PnlTarefasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PnlTarefasLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(BtnLimpar)
                         .addGap(18, 18, 18)
-                        .addComponent(BtnCancelar))
+                        .addComponent(BtnCancelar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BtnApagar)
+                        .addContainerGap(19, Short.MAX_VALUE))
                     .addGroup(PnlTarefasLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
                         .addComponent(LblDescricao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48))
+                        .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48))))
         );
         PnlTarefasLayout.setVerticalGroup(
             PnlTarefasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,12 +95,13 @@ public class FrmTarefasEditar extends javax.swing.JInternalFrame {
                 .addGroup(PnlTarefasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addGroup(PnlTarefasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSalvar)
                     .addComponent(BtnLimpar)
-                    .addComponent(BtnCancelar))
-                .addGap(24, 24, 24))
+                    .addComponent(BtnCancelar)
+                    .addComponent(BtnApagar))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -132,6 +138,7 @@ public class FrmTarefasEditar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_BtnCancelarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnApagar;
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnLimpar;
     private javax.swing.JButton BtnSalvar;

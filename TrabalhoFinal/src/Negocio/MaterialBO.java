@@ -29,8 +29,8 @@ public class MaterialBO {
     public Material Abrir(int codigo){
         return materialDAO.Abrir(codigo);
     }
-    public void Apagar(Material material){
-        materialDAO.Apagar(material);
+    public boolean Apagar(Material material){
+        return materialDAO.Apagar(material);
     }
     public List<Material> listarTodos(){
         return materialDAO.listarTodos();

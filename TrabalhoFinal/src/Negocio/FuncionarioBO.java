@@ -40,8 +40,8 @@ public class FuncionarioBO {
     public Funcionario Abrir(int codigo){
         return funcionarioDAO.Abrir(codigo);
     }
-    public void Apagar(Funcionario funcionario){
-        funcionarioDAO.Apagar(funcionario);
+    public boolean Apagar(Funcionario funcionario){
+        return funcionarioDAO.Apagar(funcionario);
     }
     
     public List<Funcionario> listarTodos(){

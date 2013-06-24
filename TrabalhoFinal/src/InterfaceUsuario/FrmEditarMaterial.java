@@ -88,6 +88,11 @@ public class FrmEditarMaterial extends javax.swing.JInternalFrame {
         });
 
         BtnApagar.setText("Apagar");
+        BtnApagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnApagarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PnlMaterialLayout = new javax.swing.GroupLayout(PnlMaterial);
         PnlMaterial.setLayout(PnlMaterialLayout);
@@ -125,7 +130,7 @@ public class FrmEditarMaterial extends javax.swing.JInternalFrame {
                     .addComponent(BtnCancelar))
                 .addGap(28, 28, 28)
                 .addComponent(BtnApagar)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -189,6 +194,20 @@ public class FrmEditarMaterial extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(rootPane, "Pronto!");
         }
     }//GEN-LAST:event_BtnLimparActionPerformed
+
+    private void BtnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnApagarActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Remover?")
+            == 0){
+            
+            if (bo.Apagar(material)) {
+                    JOptionPane.showMessageDialog(rootPane, "Apagado com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Nao foi possivel apagar!");
+                }
+            
+            
+        }
+    }//GEN-LAST:event_BtnApagarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnApagar;
