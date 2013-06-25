@@ -69,7 +69,7 @@
                           <Component id="BtnCancelar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="BtnApagar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                          <EmptySpace pref="20" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="LblDescricao" min="-2" max="-2" attributes="0"/>
@@ -96,7 +96,7 @@
                       <Component id="BtnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BtnApagar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="68" max="32767" attributes="0"/>
+                  <EmptySpace pref="72" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -127,6 +127,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Limpar Campos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnLimparActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnCancelar">
           <Properties>
@@ -140,6 +143,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Apagar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnApagarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

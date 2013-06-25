@@ -6,6 +6,7 @@ package Negocio;
 
 import DataAccess.PredioDAO;
 import DomainModel.Predio;
+import java.util.List;
 
 /**
  *
@@ -33,8 +34,16 @@ public class PredioBO {
     public Predio Abrir(int codigo){
         return predioDAO.Abrir(codigo);
     }
-    public void Apagar(Predio predio){
-        predioDAO.Apagar(predio);
+    public boolean Apagar(Predio predio){
+        return predioDAO.Apagar(predio);
+    }
+    
+    public List<Predio> listarTodos(){
+        return predioDAO.listarTodos();
+    }
+    
+    public List<Predio> buscar(Predio filtro){
+        return predioDAO.buscar(filtro);
     }
     
 }

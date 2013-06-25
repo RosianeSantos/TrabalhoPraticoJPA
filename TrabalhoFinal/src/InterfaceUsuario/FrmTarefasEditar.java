@@ -4,17 +4,35 @@
  */
 package InterfaceUsuario;
 
+import DomainModel.TarefasSemanais;
+import Negocio.TarefaSemanaisBO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author paulo_000
  */
 public class FrmTarefasEditar extends javax.swing.JInternalFrame {
-
+    TarefasSemanais tarefa;
+    TarefaSemanaisBO bo;
     /**
      * Creates new form FrmTarefasEditar
      */
-    public FrmTarefasEditar() {
+    public FrmTarefasEditar(TarefasSemanais t, TarefaSemanaisBO tbo) {
         initComponents();
+        this.tarefa = t;
+        this.bo = tbo;
+        
+        carregaCampos();
+    }
+    
+    private void carregaCampos() {
+        TxtDescricao.setText(tarefa.getDescricao());
+        
+     }
+
+    private void carregaObjeto() {
+        tarefa.setDescricao(TxtDescricao.getText());
     }
 
     /**
@@ -56,6 +74,11 @@ public class FrmTarefasEditar extends javax.swing.JInternalFrame {
         });
 
         BtnLimpar.setText("Limpar Campos");
+        BtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLimparActionPerformed(evt);
+            }
+        });
 
         BtnCancelar.setText("Cancelar");
         BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +88,11 @@ public class FrmTarefasEditar extends javax.swing.JInternalFrame {
         });
 
         BtnApagar.setText("Apagar");
+        BtnApagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnApagarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PnlTarefasLayout = new javax.swing.GroupLayout(PnlTarefas);
         PnlTarefas.setLayout(PnlTarefasLayout);
@@ -81,7 +109,7 @@ public class FrmTarefasEditar extends javax.swing.JInternalFrame {
                         .addComponent(BtnCancelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BtnApagar)
-                        .addContainerGap(19, Short.MAX_VALUE))
+                        .addContainerGap(20, Short.MAX_VALUE))
                     .addGroup(PnlTarefasLayout.createSequentialGroup()
                         .addComponent(LblDescricao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -101,7 +129,7 @@ public class FrmTarefasEditar extends javax.swing.JInternalFrame {
                     .addComponent(BtnLimpar)
                     .addComponent(BtnCancelar)
                     .addComponent(BtnApagar))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -129,13 +157,54 @@ public class FrmTarefasEditar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_TxtDescricaoActionPerformed
 
     private void BtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalvarActionPerformed
+        try {
+            if (JOptionPane.showConfirmDialog(rootPane, "Deseja Salvar?") == 0) {
+                carregaObjeto();
+                if (bo.Salvar(tarefa)) {
+                    JOptionPane.showMessageDialog(rootPane, "Salvo com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Falha ao salvar! Favor verificar os dados!");
+                }
 
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Operação cancelada!");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar!");
+        }
        
     }//GEN-LAST:event_BtnSalvarActionPerformed
 
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
-        this.dispose();
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Sair?") 
+                == 0){
+            this.dispose();
+        }
     }//GEN-LAST:event_BtnCancelarActionPerformed
+
+    private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja realmente limpar os campos?")
+                == 0) {
+            
+            TxtDescricao.setText(null);
+                       
+            JOptionPane.showMessageDialog(rootPane, "Pronto!");
+        }
+    }//GEN-LAST:event_BtnLimparActionPerformed
+
+    private void BtnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnApagarActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Remover?")
+            == 0){
+            
+            if (bo.Apagar(tarefa)) {
+                    JOptionPane.showMessageDialog(rootPane, "Apagado com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Nao foi possivel apagar!");
+                }
+            
+            
+        }
+    }//GEN-LAST:event_BtnApagarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnApagar;

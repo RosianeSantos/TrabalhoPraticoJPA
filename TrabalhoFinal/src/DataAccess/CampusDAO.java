@@ -147,10 +147,10 @@ public class CampusDAO {
                 Campus temp = new Campus(0,"", "", "", "",0);
                 
                 temp.setIdCampus(resultado.getInt("idcampus"));
-                temp.setNome("nome");   
-                temp.setTelefone("telefone");
-                temp.setCidade("cidade");
-                temp.setRua("rua");
+                temp.setNome(resultado.getString("nome"));   
+                temp.setTelefone(resultado.getString("telefone"));
+                temp.setCidade(resultado.getString("cidade"));
+                temp.setRua(resultado.getString("rua"));
                 temp.setNumero(resultado.getInt("numero"));
                 
                 campus.add(temp);

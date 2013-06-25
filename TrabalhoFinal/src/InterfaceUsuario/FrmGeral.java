@@ -4,6 +4,8 @@
  */
 package InterfaceUsuario;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Iara
@@ -159,6 +161,11 @@ public class FrmGeral extends javax.swing.JFrame {
         jMenuBar1.add(MenuRelatorio);
 
         MenuSair.setText("Sair");
+        MenuSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuSairActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(MenuSair);
 
         setJMenuBar(jMenuBar1);
@@ -223,11 +230,15 @@ public class FrmGeral extends javax.swing.JFrame {
     }//GEN-LAST:event_MniPredio2ActionPerformed
 
     private void MniCampus2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MniCampus2ActionPerformed
-        // TODO add your handling code here:
+        FrmListaCampus janela = new FrmListaCampus();
+        add(janela);
+        janela.setVisible(true);
     }//GEN-LAST:event_MniCampus2ActionPerformed
 
     private void MniTarefas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MniTarefas1ActionPerformed
-        // TODO add your handling code here:
+        FrmListaTarefas janela = new FrmListaTarefas();
+        add(janela);
+        janela.setVisible(true);
     }//GEN-LAST:event_MniTarefas1ActionPerformed
 
     private void MniMaterial2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MniMaterial2ActionPerformed
@@ -235,6 +246,13 @@ public class FrmGeral extends javax.swing.JFrame {
         add(janela);
         janela.setVisible(true);
     }//GEN-LAST:event_MniMaterial2ActionPerformed
+
+    private void MenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSairActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Sair?") 
+                == 0){
+            this.dispose();
+        }
+    }//GEN-LAST:event_MenuSairActionPerformed
 
     /**
      * @param args the command line arguments

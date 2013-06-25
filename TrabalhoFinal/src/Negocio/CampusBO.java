@@ -6,6 +6,7 @@ package Negocio;
 
 import DataAccess.CampusDAO;
 import DomainModel.Campus;
+import java.util.List;
 
 /**
  *
@@ -48,8 +49,16 @@ public class CampusBO {
     public Campus Abrir(int codigo){
         return campusDAO.Abrir(codigo);
     }
-    public void Apagar(Campus campus){
+    public boolean Apagar(Campus campus){
         campusDAO.Apagar(campus);
+        return true;
+    }
+    public List<Campus> listarTodos (){
+        return campusDAO.listarTodos();
+        
+    }
+    public List<Campus> buscar(Campus filtro){
+        return campusDAO.buscar(filtro);
     }
 }
 

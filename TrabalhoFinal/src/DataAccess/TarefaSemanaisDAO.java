@@ -131,7 +131,7 @@ public class TarefaSemanaisDAO {
                 TarefasSemanais temp = new TarefasSemanais(0,"");
                 
                 temp.setIdTarefas(resultado.getInt("idtarefa"));
-                temp.setDescricao("descricao");                
+                temp.setDescricao(resultado.getString("descricao"));                
                 
                 tarefa.add(temp);
             }

@@ -4,12 +4,17 @@
  */
 package InterfaceUsuario;
 
+import DomainModel.Predio;
+import Negocio.PredioBO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author John Kevin
  */
 public class FrmPredio extends javax.swing.JInternalFrame {
-
+    PredioBO pbo = new PredioBO();
+    
     /**
      * Creates new form FrmPredio
      */
@@ -40,7 +45,7 @@ public class FrmPredio extends javax.swing.JInternalFrame {
         setTitle("Cadastrar Pedido");
 
         PnlPedido.setBackground(new java.awt.Color(255, 255, 255));
-        PnlPedido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Pedido", 0, 0, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        PnlPedido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Pedido", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 3, 18), new java.awt.Color(0, 0, 0))); // NOI18N
         PnlPedido.setToolTipText("Pedido");
         PnlPedido.setAutoscrolls(true);
 
@@ -63,10 +68,25 @@ public class FrmPredio extends javax.swing.JInternalFrame {
         LblCodCampus.setText("Cod Campus:");
 
         BrnSalvar.setText("Salvar");
+        BrnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BrnSalvarActionPerformed(evt);
+            }
+        });
 
         BtnLimpar.setText("Limpar");
+        BtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLimparActionPerformed(evt);
+            }
+        });
 
         BtnCancelar.setText("Cancelar");
+        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PnlPedidoLayout = new javax.swing.GroupLayout(PnlPedido);
         PnlPedido.setLayout(PnlPedidoLayout);
@@ -112,7 +132,7 @@ public class FrmPredio extends javax.swing.JInternalFrame {
                     .addComponent(BrnSalvar)
                     .addComponent(BtnLimpar)
                     .addComponent(BtnCancelar))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -132,6 +152,9 @@ public class FrmPredio extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
+        PnlPedido.getAccessibleContext().setAccessibleName("Cadastrar Predio");
+        PnlPedido.getAccessibleContext().setAccessibleDescription("Predio");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -142,6 +165,45 @@ public class FrmPredio extends javax.swing.JInternalFrame {
     private void TxtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNomeActionPerformed
+
+    private void BrnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrnSalvarActionPerformed
+        Predio p = new Predio(0, "");
+        p.setNome(TxtNome.getText());
+        p.setCodcampus(Integer.parseInt(TxtCodCampus.getText()));
+        p.setCodfuncionario(Integer.parseInt(TxtIdFuncionario.getText()));
+        try {
+            if (JOptionPane.showConfirmDialog(rootPane, "Deseja Salvar?") == 0) {
+                if (pbo.Salvar(p)) { 
+                    JOptionPane.showMessageDialog(rootPane, "Salvo com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Falha ao salvar! Favor verificar os dados!");
+                }
+
+            } else {                
+                JOptionPane.showMessageDialog(rootPane, "Operação cancelada!");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao salvar!");
+        }
+    }//GEN-LAST:event_BrnSalvarActionPerformed
+
+    private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja realmente limpar os campos?")
+                == 0) {
+            TxtNome.setText(null);
+            TxtCodCampus.setText(null);
+            TxtIdFuncionario.setText(null);
+                       
+            JOptionPane.showMessageDialog(rootPane, "Pronto!");
+        }
+    }//GEN-LAST:event_BtnLimparActionPerformed
+
+    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+        if (JOptionPane.showConfirmDialog(rootPane, "Deseja Sair?") 
+                == 0){
+            this.dispose();
+        }
+    }//GEN-LAST:event_BtnCancelarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BrnSalvar;

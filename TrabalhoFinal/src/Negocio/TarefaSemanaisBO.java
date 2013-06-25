@@ -6,6 +6,7 @@ package Negocio;
 
 import DataAccess.TarefaSemanaisDAO;
 import DomainModel.TarefasSemanais;
+import java.util.List;
 
 /**
  *
@@ -28,8 +29,15 @@ public class TarefaSemanaisBO {
     public TarefasSemanais Abrir(int codigo){
         return tarefaDAO.Abrir(codigo);
     }
-    public void Apagar(TarefasSemanais tarefasemanal){
-        tarefaDAO.Apagar(tarefasemanal);
+    public boolean Apagar(TarefasSemanais tarefasemanal){
+        return tarefaDAO.Apagar(tarefasemanal);
+    }
+    public List<TarefasSemanais> listarTodos(){
+        return tarefaDAO.listarTodos();
+    }
+    
+    public List<TarefasSemanais> buscar(TarefasSemanais filtro){
+        return tarefaDAO.buscar(filtro);
     }
     
     
