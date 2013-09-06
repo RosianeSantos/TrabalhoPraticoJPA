@@ -9,13 +9,24 @@ senha varchar(18))
  */
 package DomainModel;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
- * @author Iara
+ * @author Rosy
  */
+@Entity
 public class Administrador {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int idAdministrador;
+    @Column(name="Usuario",length=200,nullable=false)
     private String usuario;
+    @Column(name="Senha",length=20,nullable=false)
     private String senha;
     
     public Administrador(){

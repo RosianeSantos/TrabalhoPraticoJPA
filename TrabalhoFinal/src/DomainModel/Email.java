@@ -4,11 +4,16 @@
  */
 package DomainModel;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
 /**
  *
- * @author Iara
+ * @author Rosy
  */
+@Entity
 public class Email {
+    @Column (name="Email")
     private String email;
     
     public Email(){

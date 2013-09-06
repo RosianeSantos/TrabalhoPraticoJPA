@@ -4,12 +4,24 @@
  */
 package DomainModel;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
- * @author Iara
+ * @author Rosy
  */
+@Entity
 public class Telefone {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private int idTelefone;
+    @Column(nullable=false)
     private String ddd;
+    @Column(nullable=false)
     private String numero;
     
     public Telefone(){
@@ -31,6 +43,14 @@ public class Telefone {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    public int getIdTelefone() {
+        return idTelefone;
+    }
+
+    public void setIdTelefone(int idTelefone) {
+        this.idTelefone = idTelefone;
     }
     
 }

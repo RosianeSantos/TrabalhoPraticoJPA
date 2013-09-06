@@ -4,12 +4,22 @@
  */
 package DomainModel;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
- * @author Iara
+ * @author Rosy
  */
+@Entity
 public class Material {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int idMaterial;
+    @Column(nullable=false)
     private String descricao = "";
     
     public Material(int codigo, String desc){

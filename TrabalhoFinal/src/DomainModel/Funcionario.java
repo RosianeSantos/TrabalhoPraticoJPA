@@ -4,15 +4,26 @@
  */
 package DomainModel;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
- * @author Iara
+ * @author Rosy
  */
+@Entity
 public class Funcionario {
-
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int idFuncionario;
+    @Column(nullable=false)
     private String nome;
+    @Column(nullable=false)
     private String cpf;
+    @Column(nullable=false)
     private String telefone;
     
     public Funcionario(int id, String nome, String cpf, String tel){

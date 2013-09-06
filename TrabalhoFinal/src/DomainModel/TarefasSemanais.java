@@ -4,12 +4,22 @@
  */
 package DomainModel;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
- * @author Iara
+ * @author Rosy
  */
+@Entity
 public class TarefasSemanais {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int idTarefas;
+    @Column(nullable=false)
     private String descricao;
     
     public TarefasSemanais(int id, String desc){

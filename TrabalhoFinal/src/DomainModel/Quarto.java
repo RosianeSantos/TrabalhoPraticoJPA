@@ -6,14 +6,25 @@ package DomainModel;
 
 import java.util.LinkedList;
 import java.util.List;
+import javax.annotation.Generated;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
- * @author Iara
+ * @author Rosy
  */
+@Entity
 public class Quarto {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int idQuarto;
+    @Column(nullable=false)
     private int numero;
+    @Column(nullable=false)
     private boolean banheiro;
     private int codpredio;
     

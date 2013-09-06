@@ -5,14 +5,25 @@
 package DomainModel;
 
 import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
- * @author Iara
+ * @author Rosy
  */
+@Entity
 public class MaterialQuarto {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     int idMaterialQuarto;
+    @OneToMany
     Material material;
+    @Column(name="Quantidade",nullable=false)
     int qtde;
 
     public int getIdMaterialQuarto() {

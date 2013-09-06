@@ -4,11 +4,19 @@
  */
 package DomainModel;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
- * @author Iara
+ * @author Rosy
  */
+@Entity
 public class AlunoTarefa {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int idalunotarefa;
     private int idaluno;
     private int idtarefa;

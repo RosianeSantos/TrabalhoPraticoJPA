@@ -4,12 +4,22 @@
  */
 package DomainModel;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
- * @author Iara
+ * @author Rosy
  */
+@Entity
 public class Predio {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int idPredio;
+    @Column(nullable=false)
     private String nome;
     private int codfuncionario;
     private int codcampus;

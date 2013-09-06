@@ -4,19 +4,36 @@
  */
 package DomainModel;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
- * @author Iara
+ * @author Rosy
  */
+@Entity
 public class Aluno {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int idAluno;
+    @Column(nullable=false)
     private String nome;
+    @Column(nullable=false)
     private String cpf;
+    @Column(nullable=false)
     private String rg;
+    @Column(nullable=false)
     private String telefone;
+    @Column(nullable=false)
     private String email;
+    @Column(nullable=false)
     private double media;
+    @Column(nullable=false)
     private String nomeresp;
+    @Column(nullable=false)
     private String telefoneresp;
     private int idcurso;
     
