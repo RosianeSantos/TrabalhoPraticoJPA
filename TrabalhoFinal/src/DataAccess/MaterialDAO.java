@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Iara
+ * @author Rosy
  */
 public class MaterialDAO {
     private BancodeDados bd;

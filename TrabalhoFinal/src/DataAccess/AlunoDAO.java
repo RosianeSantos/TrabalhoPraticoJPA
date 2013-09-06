@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Iara
+ * @author Rosy
  */
 public class AlunoDAO {
     private BancodeDados bd;

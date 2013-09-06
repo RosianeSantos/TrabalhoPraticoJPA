@@ -23,7 +23,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Iara
+ * @author Rosy
  */
 public class EstoqueGeralDAO {
     private BancodeDados bd;

@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Iara
+ * @author Rosy
  */
 public class FuncionarioDAO {
     private BancodeDados bd;

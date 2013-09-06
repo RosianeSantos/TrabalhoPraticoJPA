@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Iara
+ * @author Rosy
  */
 public class AlunoTarefaDAO {
     private BancodeDados bd;
