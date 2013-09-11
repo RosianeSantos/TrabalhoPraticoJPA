@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -18,8 +19,10 @@ public class AlunoTarefa {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int idalunotarefa;
-    private int idaluno;
-    private int idtarefa;
+    @ManyToMany
+    private Aluno aluno;
+    @ManyToMany
+    private TarefasSemanais tarefassemanais;
 
     public int getIdalunotarefa() {
         return idalunotarefa;
@@ -29,20 +32,20 @@ public class AlunoTarefa {
         this.idalunotarefa = idalunotarefa;
     }
 
-    public int getIdaluno() {
-        return idaluno;
+    public Aluno getaluno() {
+        return aluno;
     }
 
-    public void setIdaluno(int idaluno) {
-        this.idaluno = idaluno;
+    public void setaluno(Aluno aluno) {
+        this.aluno = aluno;
     }
 
-    public int getIdtarefa() {
-        return idtarefa;
+    public TarefasSemanais gettarefa() {
+        return tarefassemanais;
     }
 
-    public void setIdtarefa(int idtarefa) {
-        this.idtarefa = idtarefa;
+    public void settarefa(TarefasSemanais tarefasSemanais) {
+        this.tarefassemanais = tarefasSemanais;
     }
 
     

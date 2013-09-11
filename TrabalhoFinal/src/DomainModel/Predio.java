@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -21,8 +22,10 @@ public class Predio {
     private int idPredio;
     @Column(nullable=false)
     private String nome;
-    private int codfuncionario;
-    private int codcampus;
+    @ManyToOne
+    private Funcionario funcionario;
+    @ManyToOne
+    private Campus campus;
     
     public Predio(int id, String nome){
         this.idPredio = id;
@@ -45,20 +48,20 @@ public class Predio {
         this.nome = nome;
     }
 
-    public int getCodfuncionario() {
-        return codfuncionario;
+    public Funcionario getfuncionario() {
+        return funcionario;
     }
 
-    public void setCodfuncionario(int codfuncionario) {
-        this.codfuncionario = codfuncionario;
+    public void setfuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
     }
 
-    public int getCodcampus() {
-        return codcampus;
+    public Campus getcampus() {
+        return campus;
     }
 
-    public void setCodcampus(int codcampus) {
-        this.codcampus = codcampus;
+    public void setcampus(Campus campus) {
+        this.campus = campus;
     }
     
     

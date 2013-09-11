@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -26,7 +27,8 @@ public class Quarto {
     private int numero;
     @Column(nullable=false)
     private boolean banheiro;
-    private int codpredio;
+    @OneToMany
+    private Predio predio;
     
     private List<MaterialQuarto> mats;
     
@@ -61,12 +63,12 @@ public class Quarto {
         this.banheiro = banheiro;
     }
 
-    public int getCodpredio() {
-        return codpredio;
+    public Predio getpredio() {
+        return predio;
     }
 
-    public void setCodpredio(int codpredio) {
-        this.codpredio = codpredio;
+    public void setpredio(Predio predio) {
+        this.predio = predio;
     }
 
     public List<MaterialQuarto> getMats() {

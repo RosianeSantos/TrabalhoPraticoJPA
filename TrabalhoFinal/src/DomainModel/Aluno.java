@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -35,7 +36,8 @@ public class Aluno {
     private String nomeresp;
     @Column(nullable=false)
     private String telefoneresp;
-    private int idcurso;
+    @ManyToOne
+    private Curso curso;
     
     public Aluno(){
         idAluno =0;
@@ -106,12 +108,12 @@ public class Aluno {
         this.telefoneresp = telefoneresp;
     }
 
-    public int getIdcurso() {
-        return idcurso;
+    public Curso getcurso() {
+        return curso;
     }
 
-    public void setIdcurso(int idcurso) {
-        this.idcurso = idcurso;
+    public void setcurso(Curso idcurso) {
+        this.curso = curso;
     }
 
     public String getTelefone() {

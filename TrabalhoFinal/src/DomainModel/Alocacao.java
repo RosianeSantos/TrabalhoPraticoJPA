@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.crypto.Data;
@@ -23,8 +24,10 @@ public class Alocacao {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int idalocacao;
-    private int idaluno;
-    private int idquarto;
+    @ManyToOne
+    private Aluno aluno;
+    @ManyToOne
+    private Quarto quarto;
     @Temporal(TemporalType.DATE)
     @Column (name="Data Entrada")
     private Date dataEntrada;
@@ -36,8 +39,8 @@ public class Alocacao {
     
     public Alocacao(){
         idalocacao = 0;
-        idaluno = 0;
-        idquarto = 0;
+        //idaluno = 0;
+        //idquarto = 0;
         semestreletivo = "";
         dataEntrada = new Date();
         dataSaida = new Date();
@@ -52,20 +55,20 @@ public class Alocacao {
     }
 
     
-    public int getIdaluno() {
-        return idaluno;
+    public  Aluno getaluno() {
+        return aluno;
     }
 
-    public void setIdaluno(int idaluno) {
-        this.idaluno = idaluno;
+    public void setIdaluno(Aluno aluno) {
+        this.aluno = aluno;
     }
 
-    public int getIdquarto() {
-        return idquarto;
+    public Quarto getquarto() {
+        return quarto;
     }
 
-    public void setIdquarto(int idquarto) {
-        this.idquarto = idquarto;
+    public void setquarto(Quarto idquarto) {
+        this.quarto = quarto;
     }
 
     public Date getDataEntrada() {
